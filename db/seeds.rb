@@ -24,6 +24,8 @@ require 'faker'
 #   user_id: user
 #   )
 # product.save!
+User.destroy_all
+Product.destroy_all
 
 10.times do
   user = User.new(
@@ -43,5 +45,3 @@ require 'faker'
       product.save!
     end
 end
-
->>>>>>> master
