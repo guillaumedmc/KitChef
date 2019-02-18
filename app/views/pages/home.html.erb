@@ -1,16 +1,43 @@
-<<<<<<< HEAD
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-
-
-=======
 <h1>KitChef</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
->>>>>>> master
+
+ <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <h1>Best Chefs around you</h1>
+          <p>Discover the best Chefs around you to cook at your home</p>
+          <form action="">
+                <div class="form-group">
+                <label for="location">Where?</label>
+                <input type="location" id="location" placeholder="Paris" class= form-control>
+              </div>
+
+            <div class="form-group">
+              <label for="food-type">Which food?</label>
+              <select id="food-type" name="food-type" class=form-control>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="french">French</option>
+                <option value="indian">Indian</option>
+                <option value="chinese">Chinese</option>
+                <option value="japanese">Japanese</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">When?</label>
+              <input type="date" id="date" placeholder="Saturday 02 March 2019" class= form-control>
+
+            <div class="form-group">
+              <label for="number-people">How many people?</label>
+              <input type="number-people" id="number-people" placeholder="2" class= form-control>
+              </div>
+
+
+            <input type="submit" value="Search, I'm hungry" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
