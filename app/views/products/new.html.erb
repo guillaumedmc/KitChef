@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>form to create product</h1>
+
+  <!-- app/views/restaurants/_form.html.erb -->
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit "Submit your Meal", class: "btn btn-primary" %>
+    <% if @product.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- [...] all the fields -->
+  <% end %>
+</div>
