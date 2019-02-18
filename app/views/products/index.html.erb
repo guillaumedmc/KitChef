@@ -1,9 +1,12 @@
 <h1>this is the index</h1>
-<% @products.each do |product| %>
-<ul>
-  <li>
-    <%= link_to product.name, product_path(product.id) %>
-    <%= product.price %>
-  </li>
-</ul>
-<% end %>
+
+<div class="card-container">
+  <div class="row">
+  <% @products.each do |product| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" style="background-image: url('<%= image_path('maccheese.jpg')%>')"><%= link_to product.name, product_path(product.id) %>
+      </div>
+  </div>
+  <% end %>
+</div>
+</div>
