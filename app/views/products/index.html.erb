@@ -40,6 +40,7 @@
   <div class="row">
     <div class="cards-index">
       <% @products.each do |product| %>
+      <%= link_to product_path(product.id) do %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card-index">
           <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path('maccheese.jpg')%>')">
@@ -51,7 +52,7 @@
             </div>
             <div class="card-desc">
               <p><strong>Sergio's specialty</strong></p>
-              <p><%= link_to product.name, product_path(product.id) %></p>
+              <p><%= product.name %></p>
             </div>
             <div class="card-footer">
               <div class="card-rating">
@@ -65,6 +66,7 @@
           </div>
         </div>
       </div>
+        <% end %>
       <% end %>
     </div>
   </div>
