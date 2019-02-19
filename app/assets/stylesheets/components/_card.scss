@@ -1,17 +1,21 @@
-.card {
+.card-index {
   margin: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: margin-top 0.3s cubic-bezier(0.82, 0.29, 0.48, 0.87);
   background-color: white;
-}
-.card:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  margin-top: -5px;
-  background-color: white;
+  padding: 0px;
+  transition: opacity 0.6s ease-in;
+  opacity: 0.7;
 }
 
 
-.card a {
+.card-index:hover {
+  box-shadow: 0 0 20px black;
+  background-color: white;
+  opacity: 1;
+}
+
+
+.card-index a {
   color:white;
 }
 
@@ -60,7 +64,7 @@ right: 10px;
 bottom: 10px;
 }
 
-.card-links a {
+.card-rating a {
 display: inline-flex;
 padding: 0 8px;
 color: black;
@@ -69,7 +73,7 @@ font-size: 1.3em;
 text-decoration: none;
 transition: opacity 0.3s ease-in;
 }
-.card-links a:hover {
+.card-rating a:hover {
 opacity: 0.7;
 }
 
