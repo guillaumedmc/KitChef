@@ -3,7 +3,7 @@
 <h1> Hello <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
 
 <% if @user.photo != nil %>
-  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :thumb, gravity: :face %>
 <% end %>
 
 <h3>Your personal information </h3>
@@ -15,10 +15,11 @@
   <li><%= @user.address %></li>
 </ul>
 
+<%= link_to 'Edit my information', edit_user_registration_path %>
 <br>
 <br>
 
-<p><%= link_to "Change your password", edit_user_registration_path %></p>
+<p><%= link_to "Change my password", edit_user_registration_path %></p>
 
 <% if @user.chef %>
   <h3>Your meals</h3>
