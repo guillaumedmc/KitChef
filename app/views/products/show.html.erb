@@ -1,3 +1,46 @@
+<div class="container">
+  <div class="conts text-center">
+    <div class="card profile">
+      <div class="card-content">
+        <%= image_tag "https://www.atelierdeschefs.com/media/recette-e29710-rougail-saucisse-du-sud-ouest.jpg", alt: "alttext", class: "icon" %>
+        <h2><%= @product.name %></h2>
+        <p><%= @product.category %></p>
+      </div>
+    </div>
+
+    <div class="card contribution">
+      <div class="card-content">
+        <h3>3,536</h3>
+        <p>Ratings</p>
+      </div>
+    </div>
+
+    <div class="card follower">
+      <div class="card-content">
+        <h3><%= @product.covers %></h3>
+        <p>covers</p>
+      </div>
+    </div>
+
+    <div class="card repository">
+      <div class="card-content">
+        <h3><%= @product.price %></h3>
+        <p>dollars / person</p>
+      </div>
+    </div>
+
+    <div class="card about">
+      <div class="card-content">
+        <h3>More about <%= @product.user_id%></h3>
+        <p class="text-justify"><%= @product.description %></p>
+        <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
+        <%= link_to "All meal", products_path, class: "btn btn-danger" %>
+      </div>
+      <%= @product.created_at %>
+    </div>
+  </div>
+</div>
+=======
 <h1>This is the show</h1>
 <%= @product.name %>
 <%= @product.price %>

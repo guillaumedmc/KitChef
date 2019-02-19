@@ -1,0 +1,52 @@
+/* TODO: design a CSS grid layout for user dashboard */
+.conts {
+  height: calc(100vh - 120px);
+  display: grid;
+  grid-template-columns: 400px 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.profile {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.contribution {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.follower {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.repository {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.about {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.icon{
+  width: 100%;
+}
+
+@media (max-width: 650px) {
+  .conts {
+    display: block;
+  }
+}
