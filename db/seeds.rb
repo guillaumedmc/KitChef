@@ -23,15 +23,14 @@ User.destroy_all
     )
     user.save!
     3.times do
-      min_cover = rand(2..5)
-      max_cover = rand(6..30)
       product = Product.new(
         name: Faker::Food.dish,
         user_id: user.id,
         description: Faker::Food.description,
         price: rand(10..30),
         category: Faker::Restaurant.type,
-        covers: (min_cover..max_cover)
+        min_cover: rand(2...5),
+        max_cover: rand(10...30)
         )
       product.save!
     end
