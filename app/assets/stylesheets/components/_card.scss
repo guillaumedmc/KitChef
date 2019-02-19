@@ -1,3 +1,78 @@
-.card{
-  height: 150px;
+.card {
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: margin-top 0.3s cubic-bezier(0.82, 0.29, 0.48, 0.87);
+  background-color: white;
+}
+.card:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-top: -5px;
+  background-color: white;
+}
+
+
+.card a {
+  color:white;
+}
+
+.card-category {
+position: absolute;
+top: 10px;
+left: 10px;
+font-size: 18px;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: lighter;
+opacity: 0.9;
+margin: 0;
+}
+
+.card-category p {
+margin: 0;
+}
+
+.card-desc {
+position: absolute;
+bottom: 10px;
+left: 10px;
+}
+
+.card-body {
+height: 180px;
+position: relative;
+color: white;
+}
+
+.card-footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 12px;
+height: 38px;
+padding: 10px;
+position: absolute;
+right: 10px;
+}
+
+.card-avatar {
+position: absolute;
+right: 10px;
+bottom: 10px;
+}
+
+.card-links a {
+display: inline-flex;
+padding: 0 8px;
+color: black;
+opacity: 0.2;
+font-size: 1.3em;
+text-decoration: none;
+transition: opacity 0.3s ease-in;
+}
+.card-links a:hover {
+opacity: 0.7;
+}
+
+.gold {
+  color: yellow;
 }
