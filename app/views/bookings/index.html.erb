@@ -1,0 +1,5 @@
+<h1> These are your next booking </h1>
+<% @bookings.each do |booking| %>
+  <%= booking.total_price %>
+  <%= booking.date %>
+<% end %>
