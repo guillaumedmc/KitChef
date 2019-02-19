@@ -5,7 +5,9 @@
   <%= simple_form_for(@product) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :category %>
     <%= f.input :price %>
+    <%= f.input :covers %>
     <%= f.submit "Submit your Meal", class: "btn btn-primary" %>
     <% if @product.errors.any? %>
       <div class="errors-container">
@@ -20,3 +22,4 @@
     <!-- [...] all the fields -->
   <% end %>
 </div>
+
