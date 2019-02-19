@@ -2,7 +2,7 @@
   <div class="conts text-center">
     <div class="card-show profile">
       <div class="card-content">
-
+        <%= cl_image_tag @product.photo, crop: :fill, class: 'icon' %>
         <h2><%= @product.name %></h2>
         <p><%= @product.category %></p>
         <p class="text-justify"><%= @product.description %></p>
