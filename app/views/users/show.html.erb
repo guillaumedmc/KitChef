@@ -2,6 +2,10 @@
 <div class="container">
 <h1> Hello <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
 
+<% if @user.photo != nil %>
+  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h3>Your personal information </h3>
 
 <ul>
