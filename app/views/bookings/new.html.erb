@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>For how many person?</h1>
+
+  <!-- app/views/restaurants/_form.html.erb -->
+  <%= simple_form_for [@product, @booking] do |f| %>
+    <%= f.input :number_of_covers %>
+    <%= f.input :date %>
+    <%= f.submit "Book your Meal", class: "btn btn-primary" %>
+    <% if @product.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- [...] all the fields -->
+  <% end %>
+</div>
+
+
+
