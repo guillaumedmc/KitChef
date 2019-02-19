@@ -26,6 +26,8 @@
     <%= f.input :address,
                 required: true,
                 input_html: { autocomplete: "address" } %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
