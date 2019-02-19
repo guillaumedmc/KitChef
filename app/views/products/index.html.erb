@@ -1,44 +1,70 @@
-<div class="banner">
-
-  <div class="banner-content">
-    <h1>Welcome</h1>
-    <p>Rent unique places to stay from local hosts in 190+ countries.</p>
-    <a href="#" class="btn-green">Start now</a>
+<div class="wrapper-index">
+  <form action="">
+    <div class="search-criteria">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="location">When?</label>
+            <input type="location" id="location" placeholder="Paris" class= form-control>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="food-type">Which food?</label>
+            <select id="food-type" name="food-type" class=form-control>
+              <option value="italian">Italian</option>
+              <option value="mexican">Mexican</option>
+              <option value="french">French</option>
+              <option value="indian">Indian</option>
+              <option value="chinese">Chinese</option>
+              <option value="japanese">Japanese</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="date">When?</label>
+            <input type="date" id="date" placeholder="13 February 2019" class= form-control>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <input type="submit" value="Search the best meal!" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
   </div>
-
 </div>
 
-<div class="container">
-  <h2 class="text-center">What is your next meal?</h2>
-  <div class="row">
-    <div class="cards">
-      <% @products.each do |product| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path('maccheese.jpg')%>')">
-              <div class="card-category">
-                <p>Italian</p>
-              </div>
-              <div class="card-avatar">
-                <%= image_tag(('chef.jpg'), class:"avatar-large") %>
-              </div>
-              <div class="card-desc">
-                <p><strong>Sergio's specialty</strong></p>
-                <p><%= link_to product.name, product_path(product.id) %></p>
-              </div>
 
-              <div class="card-footer">
-                <div class="card-links">
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star"></i>
-                </div>
+<div class="container-index">
+  <div class="row">
+    <div class="cards-index">
+      <% @products.each do |product| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-index">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path('maccheese.jpg')%>')">
+            <div class="card-category">
+              <p>Italian</p>
+            </div>
+            <div class="card-avatar">
+              <%= image_tag(('chef.jpg'), class:"avatar-large") %>
+            </div>
+            <div class="card-desc">
+              <p><strong>Sergio's specialty</strong></p>
+              <p><%= link_to product.name, product_path(product.id) %></p>
+            </div>
+            <div class="card-footer">
+              <div class="card-rating">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star"></i>
               </div>
             </div>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
