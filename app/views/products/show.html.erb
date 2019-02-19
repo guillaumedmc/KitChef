@@ -18,25 +18,23 @@
       </div>
     </div>
 
-    <div class="card-show follower">
-
+<!--     <div class="card-show follower">
       <div class="card-content">
       </div>
     </div>
 
     <div class="card-show repository">
       <div class="card-content">
-
       </div>
-    </div>
+    </div> -->
 
     <div class="card-show about">
       <div class="card-content">
-        <h3>More about <%= @product.user_id%></h3>
+<!--         <h3>More about <%= @product.user_id%></h3>
         <p class="text-justify"><%= @product.description %></p>
-        <%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %>
+        <%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %> -->
 
-        <%= render 'shared/booking-form', product: @product, booking: @booking %>
+        <%= render 'shared/booking-form', booking: Booking.new %>
 
         <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
 
