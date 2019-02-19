@@ -8,8 +8,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
+    @booking.product = @product
     if @booking.save
-      redirect_to
+      redirect_to product_booking_path(product[:id], params[:id])
+    else
+      render 'new'
+    end
   end
 
   private
@@ -18,13 +22,3 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:id)
   end
 end
-
-
- @product = Product.new(product_params)
-    @product.user = current_user
-    authorize @product
-    if @product.save
-      redirect_to product_path(@product)
-    else
-      render :new
-    end
