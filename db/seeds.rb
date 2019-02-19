@@ -9,23 +9,8 @@
 
 require 'faker'
 
-# user = User.new(
-#   email: Faker::Internet.email,
-#   password: 'azerty',
-#   first_name: Faker::Name.name,
-#   last_name: Faker::Name.name,
-#   address: Faker::Address.street_address,
-#   chef: false
-# )
-# user.save!
-
-# product = Product.new(
-#   name: Faker::Food.dish,
-#   user_id: user
-#   )
-# product.save!
-User.destroy_all
 Product.destroy_all
+User.destroy_all
 
 10.times do
   user = User.new(
@@ -33,15 +18,34 @@ Product.destroy_all
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
-    address: Faker::Address.street_address,
-    chef: false
+    address: Faker::Address.full_address,
+    chef: true
     )
     user.save!
-    5.times do
+    3.times do
+      min_cover = rand(2..5)
+      max_cover = rand(6..30)
       product = Product.new(
         name: Faker::Food.dish,
-        user_id: user.id
+        user_id: user.id,
+        description: Faker::Food.description,
+        price: rand(10..30),
+        category: Faker::Restaurant.type,
+        covers: (min_cover..max_cover)
         )
       product.save!
     end
 end
+
+10.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: 'azerty',
+    first_name: Faker::Name.name,
+    last_name: Faker::Name.name,
+    address: Faker::Address.full_address,
+    chef: false
+    )
+  user.save!
+end
+
