@@ -9,8 +9,8 @@
 
 require 'faker'
 
-Product.destroy_all
 User.destroy_all
+Product.destroy_all
 
 10.times do
   user = User.new(
@@ -19,7 +19,7 @@ User.destroy_all
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
     address: Faker::Address.full_address,
-    chef: true
+    chef: false
     )
     user.save!
     3.times do

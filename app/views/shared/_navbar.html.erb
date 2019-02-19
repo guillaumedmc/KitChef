@@ -8,6 +8,9 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to"Post a Meal", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% if !current_user.nil? && current_user.chef %>
+      <%= link_to"Manage my Meals", products_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
     <a href="" class="navbar-wagon-item navbar-wagon-link">My Meals</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
 
