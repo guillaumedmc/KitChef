@@ -1,0 +1,22 @@
+
+<div class="container">
+<h1> Hello <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
+
+<h3>Your personal information </h3>
+
+<ul>
+  <li><%= @user.email %></li>
+  <li><%= @user.first_name %></li>
+  <li><%= @user.last_name %></li>
+  <li><%= @user.address %></li>
+</ul>
+
+<br>
+<br>
+
+<p><%= link_to "Change your password", edit_user_registration_path %></p>
+
+<% if @user.chef %>
+  <h3>Your meals</h3>
+<% end %>
+</div>
