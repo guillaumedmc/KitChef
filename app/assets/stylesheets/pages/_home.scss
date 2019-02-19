@@ -1,20 +1,16 @@
 .banner {
   // display: flex;
-  background-image:
+  // background-image:
+  //   linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
+  //   url('https://i.pinimg.com/originals/3d/79/4a/3d794ab668399547b2507110c9533729.jpg');
+
+    background-image:
     linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
-    url('https://i.pinimg.com/originals/3d/79/4a/3d794ab668399547b2507110c9533729.jpg');
+    url('https://www.demain.ai/wp-content/uploads/2018/12/Illustra-HD-FOOD.jpeg');
+
     color: white;
     background-size: cover;
     height: calc(100vh - 70px);
     align-items: center;
     justify-content: left;
-}
-
-.container {
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 530px;
-    height: 550px;
-    position: absolute;
-    margin-left: 140px;
-    margin-top: 50px;
 }
