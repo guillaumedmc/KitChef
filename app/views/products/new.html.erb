@@ -15,7 +15,7 @@
     <% if @product.errors.any? %>
       <div class="errors-container">
         <ul>
-          <% @restaurant.errors.full_messages.each do |message| %>
+          <% @product.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>
