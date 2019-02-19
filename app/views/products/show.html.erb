@@ -2,9 +2,11 @@
   <div class="conts text-center">
     <div class="card-show profile">
       <div class="card-content">
-        <%= image_tag "https://www.atelierdeschefs.com/media/recette-e29710-rougail-saucisse-du-sud-ouest.jpg", alt: "alttext", class: "icon" %>
+
+        <%= image_tag "http://assets.kraftfoods.com/recipe_images/opendeploy/164648-a109f338a4fbe4a1232d7e8e4408259bfb963ed4_642x428.jpg", alt: "alttext", class: 'icon' %>
         <h2><%= @product.name %></h2>
         <p><%= @product.category %></p>
+        <p class="text-justify"><%= @product.description %></p>
       </div>
     </div>
 
@@ -12,25 +14,27 @@
       <div class="card-content">
         <h3>3,536</h3>
         <p>Ratings</p>
+        <h3><%= @product.price %></h3>
+        <p>dollars / person</p>
       </div>
     </div>
 
     <div class="card-show follower">
+
       <div class="card-content">
       </div>
     </div>
 
     <div class="card-show repository">
       <div class="card-content">
-        <h3><%= @product.price %></h3>
-        <p>dollars / person</p>
+
       </div>
     </div>
 
     <div class="card-show about">
       <div class="card-content">
         <h3>More about <%= @product.user_id%></h3>
-        <p class="text-justify"><%= @product.description %></p>
+
         <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
         <%= link_to "All meal", products_path, class: "btn btn-danger" %>
       </div>
@@ -38,8 +42,4 @@
     </div>
   </div>
 </div>
-=======
-<h1>This is the show</h1>
-<%= @product.name %>
-<%= @product.price %>
 
