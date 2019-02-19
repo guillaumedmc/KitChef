@@ -33,14 +33,13 @@
     <div class="card-show about">
       <div class="card-content">
         <h3>More about <%= @product.user_id%></h3>
-
+        <p class="text-justify"><%= @product.description %></p>
+        <%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %>
 
         <%= render 'shared/booking-form', product: @product, booking: @booking %>
 
-
-
-
         <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
+
         <%= link_to "All meal", products_path, class: "btn btn-danger" %>
       </div>
       <%= @product.created_at %>
