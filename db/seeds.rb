@@ -31,7 +31,8 @@ User.destroy_all
         description: Faker::Food.description,
         price: rand(10..30),
         category: Faker::Restaurant.type,
-        covers: (min_cover..max_cover)
+        min_cover: min_cover,
+        max_cover: max_cover
         )
       product.save!
     end
