@@ -2,8 +2,7 @@
   <div class="conts text-center">
     <div class="card-show profile">
       <div class="card-content">
-
-        <%= image_tag "http://assets.kraftfoods.com/recipe_images/opendeploy/164648-a109f338a4fbe4a1232d7e8e4408259bfb963ed4_642x428.jpg", alt: "alttext", class: 'icon' %>
+        <%= cl_image_tag @product.photo, crop: :fill, class: 'icon' %>
         <h2><%= @product.name %></h2>
         <p><%= @product.category %></p>
         <p class="text-justify"><%= @product.description %></p>
@@ -36,6 +35,10 @@
         <h3>More about <%= @product.user_id%></h3>
         <p class="text-justify"><%= @product.description %></p>
         <%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %>
+
+        <%= render 'shared/booking-form', product: @product, booking: @booking %>
+
+        <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
 
         <%= link_to "All meal", products_path, class: "btn btn-danger" %>
       </div>
