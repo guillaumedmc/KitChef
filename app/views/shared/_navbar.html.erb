@@ -7,18 +7,22 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">All</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
+    <%= link_to"Post a Meal", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">My Meals</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'My profile', users_profile_path(current_user) %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

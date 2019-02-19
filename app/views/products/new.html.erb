@@ -1,11 +1,16 @@
 <div class="container">
-  <h1>form to create product</h1>
+  <h1>What is your Meal?</h1>
 
   <!-- app/views/restaurants/_form.html.erb -->
   <%= simple_form_for(@product) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :category %>
     <%= f.input :price %>
+    <%= f.input :min_cover %>
+    <%= f.input :max_cover %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Submit your Meal", class: "btn btn-primary" %>
     <% if @product.errors.any? %>
       <div class="errors-container">
@@ -20,3 +25,5 @@
     <!-- [...] all the fields -->
   <% end %>
 </div>
+
+
