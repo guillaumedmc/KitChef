@@ -1,1 +1,37 @@
-<h1>test</h1>
+
+<div class="container">
+  <h1>Your meals</h1>
+
+  <div class="tabs">
+    <a href="#" class="tab-active">Your live meals</a>
+    <a href="#" class="tab">Other meals</a>
+  </div>
+  <ul class="inbox">
+    <% @products.each do |product| %>
+    <li class="message">
+      <div class="picture">
+        <%= cl_image_tag product.photo, crop: :fill, class: 'icon' %>
+      </div>
+
+      <div class="text">
+        <h4><%= product.name %></h4>
+        <p><%= product.description %></p>
+      </div>
+
+      <div class="chef">
+      <% product.user.first_name %>
+      <% product.user.photo %>
+        <h4><%= product.user.first_name %></h4>
+        <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+      </div>
+
+      <div class="price" id="accepted">
+        <h4>Accepted</h4>
+        <p>Dinner for max <%= product.max_cover %> people </p>
+        <p>Price: €<%= product.price %>/pers</p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
