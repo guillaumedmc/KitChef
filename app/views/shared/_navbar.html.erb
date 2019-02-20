@@ -11,7 +11,7 @@
     <% if !current_user.nil? && current_user.chef %>
       <%= link_to"Manage my Meals", products_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">My Meals</a>
+    <%= link_to"My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
 
 
