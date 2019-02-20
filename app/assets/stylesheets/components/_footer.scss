@@ -1,10 +1,15 @@
 .footer {
   background-color: black;
   color: white;
-  position: bottom;
+  clear: both;
+  position: relative;
+  height: 50px;
+  text-align: center;
 }
 
 .footer a {
   color:white;
   opacity: 0.5;
 }
+
+
