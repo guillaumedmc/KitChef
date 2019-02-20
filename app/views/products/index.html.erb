@@ -43,18 +43,19 @@
       <%= link_to product_path(product.id) do %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card-index">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path('maccheese.jpg')%>')">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
             <div class="card-category">
-              <p>Italian</p>
+              <p><%= product.category %></p>
             </div>
             <div class="card-avatar">
-              <%= image_tag(('chef.jpg'), class:"avatar-large") %>
+            <% user = User.find(product.user_id) %>
+            <%= cl_image_tag user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
             </div>
             <div class="card-desc">
-              <p><strong>Sergio's specialty</strong></p>
-              <p><%= product.name %></p>
+              <h2><strong><%= product.name %> </strong> - €<%= product.price %>/pers.</>
+              <p><%= product.description %></p>
             </div>
-            <div class="card-footer">
+            <div class="card-header">
               <div class="card-rating">
                 <i class="fas fa-star gold"></i>
                 <i class="fas fa-star gold"></i>
