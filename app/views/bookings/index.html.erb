@@ -1,38 +1,36 @@
-
-
 <div class="container">
-  <h1> These are your next bookings: </h1>
-  <div class="row">
-    <div class="cards-index">
-      <% @bookings.each do |booking| %>
-        <%= link_to product_path(booking.product) do %>
-        <div class="col-xs-12">
-          <div class="card-index">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= booking.product.photo %>')">
-              <div class="card-category">
-                <p>Italian</p>
-              </div>
-              <div class="card-avatar">
-                <%= image_tag(('chef.jpg'), class:"avatar-large") %>
-              </div>
-              <div class="card-desc">
-                <p><strong>Sergio's specialty</strong></p>
-                <p><%= booking.product.name %></p>
-              </div>
-              <div class="card-header">
-                <div class="card-rating">
-                  <i class="fas fa-star gold"></i>
-                  <i class="fas fa-star gold"></i>
-                  <i class="fas fa-star gold"></i>
-                  <i class="fas fa-star gold"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-          <% end %>
-      <% end %>
-    </div>
+  <h1>Your bookings</h1>
+
+  <div class="tabs">
+    <a href="#" class="tab-active">Current bookings</a>
+    <a href="#" class="tab">Past bookings</a>
   </div>
+  <ul class="inbox">
+    <% @bookings.each do |booking| %>
+    <li class="message">
+      <div class="picture">
+        <%= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+      </div>
+
+      <div class="text">
+        <h4><%= booking.product.name %></h4>
+        <p><%= booking.product.description %></p>
+      </div>
+
+      <div class="chef">
+      <% user = User.find(booking.user_id) %>
+        <h4><%= user.first_name %></h4>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+      </div>
+
+      <div class="price" id="accepted">
+        <h4>Accepted</h4>
+        <p>Dinner for <%= booking.number_of_covers %> people </p>
+        <p>Price: €<%= booking.product.price %>/pers</p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
 </div>
+
+

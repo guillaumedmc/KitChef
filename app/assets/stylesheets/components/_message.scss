@@ -1,0 +1,91 @@
+.inbox {
+  padding: 10px 20px;
+  list-style: none;
+  border: 2px solid rgba(220,224,244,1);
+  margin: 4px;
+}
+
+.message {
+  position:relative;
+  display:flex;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 3px;
+  border-bottom: 2px solid rgba(220,224,244,1);
+  /* Your turn to design a flexbox message */
+}
+
+.text {
+  padding-left:10px;
+  width: 50%;
+  margin: 5px;
+}
+
+.text p{
+  color: rgba(0,0,0,0.4);
+  font-size: 15px;
+}
+
+.text h4 {
+  color: rgba(0,0,0,0.9);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+.info p {
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.price{
+  font-size: 15px;
+  width: 20%;
+}
+
+#accepted.price h4{
+  color:green;
+}
+
+#declined.price h4{
+  color:red;
+}
+
+#pending.price h4{
+  color: grey;
+}
+
+.inbox img {
+  justify-content: center;
+  align-content: center;
+}
+
+.picture{
+  display: flex;
+  align-items: center;
+  width: 130px;
+}
+
+.info {
+  width: 14%;
+}
+
+#Jad {
+  border-bottom: none;
+}
+
+.chef h4 {
+ font-size: 20px;
+}
+
+.chef {
+  text-align: center;
+  justify-content:center;
+}
+
+.price {
+  text-align: center;
+  justify-content:center;
+}
