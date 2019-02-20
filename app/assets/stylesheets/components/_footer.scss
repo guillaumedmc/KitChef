@@ -2,7 +2,6 @@
   background-color: black;
   color: white;
   clear: both;
-  position: relative;
   height: 50px;
   text-align: center;
 }
@@ -13,3 +12,6 @@
 }
 
 
+.extension {
+  height: calc(100vh - 70px);
+}
