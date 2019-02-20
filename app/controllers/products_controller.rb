@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     end
 
   def my_meals
-    @products = Product.where(user: current_user)
+    @products = Product.select { |product| product.user == current_user }
   end
 
   end
