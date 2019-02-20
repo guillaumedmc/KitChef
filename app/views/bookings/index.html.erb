@@ -18,7 +18,8 @@
       </div>
 
       <div class="chef">
-      <% user = User.find(booking.user_id) %>
+      <% product = Product.find(booking.product_id) %>
+      <% user = User.find(product.user_id) %>
         <h4><%= user.first_name %></h4>
         <%= cl_image_tag user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
       </div>
