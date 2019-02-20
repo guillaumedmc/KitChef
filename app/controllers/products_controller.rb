@@ -27,11 +27,10 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
 
   def my_meals
     @products = Product.select { |product| product.user == current_user }
-  end
-
   end
 
 private

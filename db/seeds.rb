@@ -7,44 +7,45 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require 'faker'
+# require 'faker'
 
-User.destroy_all
+Booking.destroy_all
 Product.destroy_all
+User.destroy_all
 
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: 'azerty',
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
-    address: Faker::Address.full_address,
-    chef: false
-    )
-    user.save!
-    3.times do
-      product = Product.new(
-        name: Faker::Food.dish,
-        user_id: user.id,
-        description: Faker::Food.description,
-        price: rand(10..30),
-        category: Faker::Restaurant.type,
-        min_cover: rand(2...5),
-        max_cover: rand(10...30)
-        )
-      product.save!
-    end
-end
+# 10.times do
+#   user = User.new(
+#     email: Faker::Internet.email,
+#     password: 'azerty',
+#     first_name: Faker::Name.name,
+#     last_name: Faker::Name.name,
+#     address: Faker::Address.full_address,
+#     chef: false
+#     )
+#     user.save!
+#     3.times do
+#       product = Product.new(
+#         name: Faker::Food.dish,
+#         user_id: user.id,
+#         description: Faker::Food.description,
+#         price: rand(10..30),
+#         category: Faker::Restaurant.type,
+#         min_cover: rand(2...5),
+#         max_cover: rand(10...30)
+#         )
+#       product.save!
+#     end
+# end
 
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: 'azerty',
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
-    address: Faker::Address.full_address,
-    chef: false
-    )
-  user.save!
-end
+# 10.times do
+#   user = User.new(
+#     email: Faker::Internet.email,
+#     password: 'azerty',
+#     first_name: Faker::Name.name,
+#     last_name: Faker::Name.name,
+#     address: Faker::Address.full_address,
+#     chef: false
+#     )
+#   user.save!
+# end
 
