@@ -32,15 +32,12 @@
       <div class="card-content">
 <!--         <h3>More about <%= @product.user_id%></h3>
         <p class="text-justify"><%= @product.description %></p>
-        <%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %> -->
+        <#%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %> -->
 
-        <%= render 'shared/booking-form', booking: Booking.new %>
+        <%= render 'shared/booking-form', booking: @booking, product: @product %>
 
-        <%= link_to "Reserve", products_path, class: "btn btn-danger" %>
-
-        <%= link_to "All meal", products_path, class: "btn btn-danger" %>
+        <%= link_to "Back to all meal", products_path %>
       </div>
-      <%= @product.created_at %>
     </div>
   </div>
 </div>

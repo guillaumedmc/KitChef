@@ -1,5 +1,9 @@
-<%= simple_form_for booking do |f| %>
-<%= f.input :number_of_covers %>
-<%= f.input :date %>
-<%= f.submit %>
+
+
+<h3>Do you want to taste a <em> <%= @product.name %></em> mae with for you by <%= @product.user.first_name %>?</h3>
+
+<%= simple_form_for [@product, @booking] do |f| %>
+  <%= f.input :date, as: :date %>
+  <%= f.input :number_of_covers %>
+  <%= f.submit "Book this meal", class: "btn btn-danger" %>
 <% end %>
