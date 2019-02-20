@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     authorize @product
     if @product.save && current_user.save
       current_user.chef = true if current_user.chef != true
-      redirect_to product_path(@product)
+      redirect_to my_meals_products_path
     else
       render :new
     end

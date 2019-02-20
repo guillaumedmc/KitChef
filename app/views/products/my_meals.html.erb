@@ -18,15 +18,8 @@
         <p><%= product.description %></p>
       </div>
 
-      <div class="chef">
-      <% product.user.first_name %>
-      <% product.user.photo %>
-        <h4><%= product.user.first_name %></h4>
-        <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
-      </div>
 
       <div class="price" id="accepted">
-        <h4>Accepted</h4>
         <p>Dinner for max <%= product.max_cover %> people </p>
         <p>Price: €<%= product.price %>/pers</p>
       </div>
