@@ -1,11 +1,17 @@
 .footer {
   background-color: black;
   color: white;
-  position: bottom;
-  margin-bottom: 0px;
+  clear: both;
+  height: 50px;
+  text-align: center;
 }
 
 .footer a {
   color:white;
   opacity: 0.5;
+}
+
+
+.extension {
+  height: calc(100vh - 70px);
 }
