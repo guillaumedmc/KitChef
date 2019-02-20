@@ -1,0 +1,30 @@
+/* Your tabs CSS code here */
+.tabs {
+  color: black;
+  padding:2px 4px;
+}
+
+
+.tab-active {
+  text-decoration: none;
+  border-bottom: 5px solid #48a399;
+  color: black;
+  font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+
+.tab {
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.tab:hover{
+  color: black;
+}
