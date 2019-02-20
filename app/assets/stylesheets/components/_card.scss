@@ -41,13 +41,22 @@ bottom: 10px;
 left: 10px;
 }
 
+.card-desc p {
+font-size: 15px;
+}
+
+.card-desc h2 {
+font-size: 20px;
+}
+
+
 .card-body {
 height: 180px;
 position: relative;
 color: white;
 }
 
-.card-footer {
+.card-header {
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -61,7 +70,7 @@ right: 10px;
 .card-avatar {
 position: absolute;
 right: 10px;
-bottom: 10px;
+top: 35px;
 }
 
 .card-rating a {
