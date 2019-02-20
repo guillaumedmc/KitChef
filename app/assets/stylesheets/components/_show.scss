@@ -16,15 +16,15 @@
   grid-row: 1 / span 1;
 }
 
-.follower {
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 1;
-}
+// .follower {
+//   grid-column: 3 / span 1;
+//   grid-row: 1 / span 1;
+// }
 
-.repository {
-  grid-column: 4 / span 1;
-  grid-row: 1 / span 1;
-}
+// .repository {
+//   grid-column: 4 / span 1;
+//   grid-row: 1 / span 1;
+// }
 
 .about {
   grid-row: 1 / span 2;
@@ -43,6 +43,11 @@
 
 .icon{
   width: 100%;
+  border-radius: 5px;
+}
+
+.avatar-show {
+  border-radius: 5px;
 }
 
 @media (max-width: 650px) {
