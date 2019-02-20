@@ -3,7 +3,7 @@
     <div class="card-show profile">
       <div class="card-content">
         <h3><%= @product.name %></h3>
-        <%= cl_image_tag @product.photo,:gravity=>"auto",:zoom=>0.2, :height=>200, :crop=>"fill", class: "icon" %>
+        <%= cl_image_tag @product.photo, :crop=>"thumb", :width=>350, :height=>200 ,:zoom=>0.2, class: 'avatar-show' %>
         <h4><strong>Category:</strong> <%= @product.category %></h4>
         <p class="text-justify"><%= @product.description %></p>
       </div>
