@@ -2,7 +2,7 @@
   <div class="banner-content">
     <%= render 'shared/search-form' %>
 
-    <%= video_tag "video", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+    <%= cl_video_tag ("video"), :autoplay => true, loop: :loop, mute: :mute, class: "video" %>
 
   </div>
 </div>
