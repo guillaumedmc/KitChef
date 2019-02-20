@@ -1,16 +1,23 @@
-.banner-landpage {
-  // display: flex;
-  // background-image:
-  //   linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
-  //   url('https://i.pinimg.com/originals/3d/79/4a/3d794ab668399547b2507110c9533729.jpg');
+// .banner-landpage {
+//     background-image:
+//     linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
+//     url('https://www.demain.ai/wp-content/uploads/2018/12/Illustra-HD-FOOD.jpeg');
 
-    background-image:
-    linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
-    url('https://www.demain.ai/wp-content/uploads/2018/12/Illustra-HD-FOOD.jpeg');
+//     color: white;
+//     background-size: cover;
+//     height: calc(100vh - 120px);
+//     align-items: center;
+//     justify-content: left;
+// }
 
-    color: white;
-    background-size: cover;
-    height: calc(100vh - 120px);
-    align-items: center;
-    justify-content: left;
+.video {
+ position: fixed;
+ display: flex;
+ top: 50%; left: 50%;
+  z-index: -1;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ transform: translate(-50%, -50%);
 }

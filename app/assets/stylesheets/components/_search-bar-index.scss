@@ -4,6 +4,7 @@
   padding: 2em 0;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
 
 
@@ -13,4 +14,8 @@
 
 .container-index {
 justify-content: space-between;
+}
+
+.search {
+  margin-top: 29px;
 }
