@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_after_action :verify_authorized, only: :my_meals
 
   def index
     @products = policy_scope(Product).order(price: :desc)
@@ -25,6 +26,11 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+
+  def my_meals
+    @products = Product.where(user: current_user)
+  end
+
   end
 
 private
