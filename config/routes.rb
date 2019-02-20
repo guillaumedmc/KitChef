@@ -4,13 +4,11 @@ Rails.application.routes.draw do
    get 'users/:id', to: "users#show", as: 'users/profile'
    resources :users, only: [ :edit, :update ]
 
-   resources :users, only: [ :show ] do
-    resources :products, only: :index
-   end
-
    resources :products do
     resources :bookings, only: [:create]
-
+    collection do
+      get 'my_meals'
+    end
 
    end
    resources :bookings, only: [:index]
