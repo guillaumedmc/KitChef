@@ -66,6 +66,7 @@
   display: flex;
   align-items: center;
   width: 130px;
+  size: fit;
 }
 
 .info {
@@ -88,4 +89,8 @@
 .price {
   text-align: center;
   justify-content:center;
+}
+
+.icon {
+  width: 130px;
 }
