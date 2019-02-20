@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  before_action :authenticate_user!, only: [ :create]
   def new
     @booking = Booking.new
     authorize @booking
@@ -30,5 +30,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:number_of_covers, :date)
   end
-
 end

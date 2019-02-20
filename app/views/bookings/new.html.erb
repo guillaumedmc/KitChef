@@ -4,7 +4,7 @@
   <!-- app/views/restaurants/_form.html.erb -->
   <%= simple_form_for [@product, @booking] do |f| %>
     <%= f.input :number_of_covers %>
-    <%= f.input :date %>
+    <%= f.text_field :date, :placeholder => 'dd/mm/yyyy' %>
     <%= f.submit "Book your Meal", class: "btn btn-primary" %>
     <% if @product.errors.any? %>
       <div class="errors-container">
