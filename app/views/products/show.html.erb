@@ -3,7 +3,7 @@
     <div class="card-show profile">
       <div class="card-content">
         <h3><%= @product.name %></h3>
-        <%= cl_image_tag @product.photo, crop: :fill,:height=>200 , class: 'icon' %>
+        <%= cl_image_tag @product.photo,:gravity=>"auto",:zoom=>0.2, :height=>200, :crop=>"fill", class: "icon" %>
         <h4><strong>Category:</strong> <%= @product.category %></h4>
         <p class="text-justify"><%= @product.description %></p>
       </div>
@@ -15,16 +15,16 @@
 
         <h3><%= user.first_name %></h3>
 
-        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>200, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>250, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
 
-        <p>Ratings</p>
+        <p>Rating</p>
         <i class="fas fa-star gold"></i>
         <i class="fas fa-star gold"></i>
         <i class="fas fa-star gold"></i>
         <i class="fas fa-star gold"></i>
         <h3><%= @product.price %></h3>
         <p>euros / person</p>
-        <a href="#">All meal</a><span> |</span>
+        <a href="#">Other</a><span> |</span>
         <a href="#">Contact</a>
       </div>
     </div>
