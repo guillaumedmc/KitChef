@@ -21,7 +21,7 @@
       <% product = Product.find(booking.product_id) %>
       <% user = User.find(product.user_id) %>
         <h4><%= user.first_name %></h4>
-        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
       </div>
 
       <div class="price" id="accepted">
