@@ -2,19 +2,30 @@
   <div class="conts text-center">
     <div class="card-show profile">
       <div class="card-content">
-        <%= cl_image_tag @product.photo, crop: :fill, class: 'icon' %>
-        <h2><%= @product.name %></h2>
-        <p><%= @product.category %></p>
+        <h3><%= @product.name %></h3>
+        <%= cl_image_tag @product.photo,:gravity=>"auto",:zoom=>0.2, :height=>200, :crop=>"fill", class: "icon" %>
+        <h4><strong>Category:</strong> <%= @product.category %></h4>
         <p class="text-justify"><%= @product.description %></p>
       </div>
     </div>
 
     <div class="card-show contribution">
       <div class="card-content">
-        <h3>3,536</h3>
-        <p>Ratings</p>
+        <% user = User.find(@product.user_id) %>
+
+        <h3><%= user.first_name %></h3>
+
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>250, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
+
+        <p>Rating</p>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
         <h3><%= @product.price %></h3>
-        <p>dollars / person</p>
+        <p>euros / person</p>
+        <a href="#">Other</a><span> |</span>
+        <a href="#">Contact</a>
       </div>
     </div>
 
