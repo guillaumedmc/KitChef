@@ -1,55 +1,52 @@
-<div class="container">
-  <div class="conts text-center">
-    <div class="card-show profile">
-      <div class="card-content">
-        <h3><%= @product.name %></h3>
-        <%= cl_image_tag @product.photo, :crop=>"thumb", :width=>351, :height=>200 ,:zoom=>0.2, class: 'avatar-show' %>
-        <h4><strong>Category: </strong> <%= @product.category %></h4>
-        <p class="text-justify"><%= @product.description %></p>
-      </div>
+
+        <div class="head-show"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @product.photo, crop: :fill %>')">
+  <div class="card-category"></div>
+  <div class="card-description">
+    <h2><%= @product.name.upcase %></h2>
+    <div class="square-font">
+    <p><%= @product.category.upcase %></p>
     </div>
+  </div>
+  <a class="card-link" href="#" ></a>
+</div>
 
-    <div class="card-show contribution">
-      <div class="card-content">
+
+
+
+
+
+
+        <div class="rate-show">
+        <p>Rating :</p>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        </div>
+
+
+
+<div class="container-show">
+
+    <div class="prof-show">
         <% user = User.find(@product.user_id) %>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>200, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
+        <div class="name-chef-show">
+          <h4><%= user.first_name %></h4>
+        </div>
+        </div>
 
-        <h3><%= user.first_name %></h3>
 
-        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>250, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
-
-        <p>Rating</p>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
         <h3><%= @product.price %></h3>
         <p>euros / person</p>
         <a href="#">Other</a><span> |</span>
         <a href="#">Contact</a>
-      </div>
-    </div>
 
-<!--     <div class="card-show follower">
-      <div class="card-content">
-      </div>
-    </div>
-
-    <div class="card-show repository">
-      <div class="card-content">
-      </div>
-    </div> -->
-
-    <div class="card-show about">
-      <div class="card-content">
-<!--         <h3>More about <%= @product.user_id%></h3>
         <p class="text-justify"><%= @product.description %></p>
-        <#%= link_to "Book this Meal", new_product_booking_path(@product), class: "btn btn-danger" %> -->
 
         <%= render 'shared/booking-form', booking: @booking, product: @product %>
 
         <%= link_to "Back to all meal", products_path %>
-      </div>
-    </div>
-  </div>
 </div>
-
