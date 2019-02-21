@@ -3,10 +3,11 @@ style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
 url('<%= cl_image_path ("background-meal"), height: 600, width: 400 %>')">
 
 <div class="container">
+  <div class="container-new-meal">
+
   <div class="row">
     <div class="col-xs-12 col-sm-5 col-sm-offset-6", id="search-new">
       <h1>What is your new Meal?</h1>
-
       <%= simple_form_for(@product) do |f| %>
       <%= f.input :name %>
       <%= f.input :description, as: :string %>
@@ -28,6 +29,7 @@ url('<%= cl_image_path ("background-meal"), height: 600, width: 400 %>')">
       <% end %>
       <% end %>
     </div>
+  </div>
   </div>
 </div>
 </div>
