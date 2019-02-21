@@ -1,29 +1,33 @@
-<div class="container">
-  <h1>What is your Meal?</h1>
+<div class="container-new-meal"
+style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('<%= cl_image_path ("background-meal"), height: 600, width: 400 %>')">
 
-  <!-- app/views/restaurants/_form.html.erb -->
-  <%= simple_form_for(@product) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :category %>
-    <%= f.input :price %>
-    <%= f.input :min_cover %>
-    <%= f.input :max_cover %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Submit your Meal", class: "btn btn-primary" %>
-    <% if @product.errors.any? %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-5 col-sm-offset-6", id="search-new">
+      <h1>What is your new Meal?</h1>
+
+      <%= simple_form_for(@product) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description, as: :string %>
+      <%= f.input :category, label:"Food category" %>
+      <%= f.input :price, label:"Price per person" %>
+      <%= f.input :min_cover, label:"Minimum number of covers" %>
+      <%= f.input :max_cover, label:"Maximum number of covers" %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Submit your Meal", class: "btn btn-primary" %>
+      <% if @product.errors.any? %>
       <div class="errors-container">
         <ul>
           <% @product.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+          <li ><%= message %></li>
           <% end %>
         </ul>
       </div>
-    <% end %>
-
-    <!-- [...] all the fields -->
-  <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
+</div>

@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
     authorize @product
   end
 
@@ -22,7 +23,6 @@ class ProductsController < ApplicationController
     current_user.chef = true
     authorize @product
     if @product.save && current_user.save
-      current_user.chef = true if current_user.chef != true
       redirect_to my_meals_products_path
     else
       render :new
