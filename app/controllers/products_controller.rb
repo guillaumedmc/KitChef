@@ -38,6 +38,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+
   def my_meals
     @products = Product.select { |product| product.user == current_user }
   end
