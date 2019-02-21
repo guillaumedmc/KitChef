@@ -1,42 +1,44 @@
-/* TODO: design a CSS grid layout for user dashboard */
-.conts {
-  height: 80vh;
-  display: grid;
-  grid-template-columns: 40% 1fr 1fr;
+.head-show {
+   display: flex;
+  background-image:
+    linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
+    url('../../images/background.jpg');
+    color: white;
+    background-size: cover;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
 }
 
-.profile {
-  grid-column: 1 / span 1;
+.rate-show {
+  display: flex;
+  justify-content: center;
 }
 
-.contribution {
-  grid-column: 2 / span 1;
 
+.prof-show {
+  display: block;
+  position: relative;
 }
 
-.about {
-  grid-column: 3 / span 2;
+.name-chef-show {
+  position: absolute;
+  bottom: 17px;
+  left: 170px;
 }
-
-.card-show {
-  background: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
-  align-items: center;
-  justify-content: space-around;
-  margin: 10px;
-}
-
-// .icon-product{
-//   border-radius: 5px;
-//   width: 100%;
-// }
 
 .avatar-show {
-  border-radius: 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+  position:absolute;
+  bottom: 40px;
 }
 
+.container-show {
+  width: 800px;
+  margin: 20px auto;
+}
 
 @media (max-width: 650px) {
   .conts {
