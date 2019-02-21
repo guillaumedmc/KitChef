@@ -1,7 +1,31 @@
 #search{
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 10px;
   width: 40%;
+}
+
+#location {
+  width: 70%;
+  margin-left: 70px;
+  margin-bottom: 0px;
+}
+
+#number {
+  width: 70%;
+  margin-left: 70px;
+}
+
+.food-type {
+  width: 70%;
+  margin-left: 70px;
+}
+
+.row-home {
+  padding: 20px;
+}
+
+.form-home {
+  padding: 20px;
 }

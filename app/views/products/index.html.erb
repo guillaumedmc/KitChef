@@ -9,66 +9,63 @@
           </div>
         </div>
         <div class="col-xs-3">
-          <div class="form-group">
-            <label for="food-type">Which food?</label>
-            <select id="food-type" name="food-type" class=form-control>
-              <option value="italian">Italian</option>
-              <option value="mexican">Mexican</option>
-              <option value="french">French</option>
-              <option value="indian">Indian</option>
-              <option value="chinese">Chinese</option>
-              <option value="japanese">Japanese</option>
-            </select>
+          <label for="date">Which food or Chef?</label>
+          <%= form_tag products_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+            placeholder: "Food type"
+            %>
+            <% end %>
           </div>
-        </div>
-        <div class="col-xs-3">
-          <div class="form-group">
-            <label for="date">When?</label>
-            <input type="date" id="date" placeholder="13 February 2019" class= form-control>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <label for="date">When?</label>
+              <input type="date" id="date" placeholder="13 February 2019" class= form-control>
+            </div>
           </div>
+          <div class="col-xs-3">
+            <input type="submit" value="Search the best meal!" class="btn btn-primary search">
+          </form>
         </div>
-        <div class="col-xs-3">
-          <input type="submit" value="Search the best meal!" class="btn btn-primary search">
-        </form>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="container-index">
-  <div class="row">
-    <div class="cards-index">
-      <% @products.each do |product| %>
-      <%= link_to product_path(product.id) do %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card-index">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
-            <div class="card-category">
-              <p><%= product.category %></p>
-            </div>
-            <div class="card-avatar">
-            <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
-            </div>
-            <div class="card-desc">
-              <h2><strong><%= product.name %> </strong>
-              <p>€<%= product.price %>/pers.</p>
-            </div>
-            <div class="card-header">
-              <div class="card-rating">
-                <i class="fas fa-star gold"></i>
-                <i class="fas fa-star gold"></i>
-                <i class="fas fa-star gold"></i>
-                <i class="fas fa-star gold"></i>
-                <i class="fas fa-star"></i>
+  <div class="container-index">
+    <div class="row">
+      <div class="cards-index">
+        <% @products.each do |product| %>
+        <%= link_to product_path(product.id) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card-index">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
+              <div class="card-category">
+                <p><%= product.category %></p>
+              </div>
+              <div class="card-avatar">
+                <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+              </div>
+              <div class="card-desc">
+                <h2><strong><%= product.name %> </strong>
+                  <p>€<%= product.price %>/pers.</p>
+                </div>
+                <div class="card-header">
+                  <div class="card-rating">
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <% end %>
+          <% end %>
         </div>
       </div>
-        <% end %>
-      <% end %>
     </div>
-  </div>
-</div>
 
