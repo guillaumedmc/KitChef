@@ -52,13 +52,19 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
     <p class="text-justify">Description: <hr>
       <%= @product.description %></p>
       <hr>
-
-      <p>Rating:</p> <hr>
+      <p>Rating:</p>
       <% @product.reviews.each do |review| %>
-      <hr>
-       <strong><%= review.created_at.to_s.first(10) %></strong>
+       <strong> <%= review.created_at.to_s.first(10)%>
+        <% if review.rating > 0 %>
+        <% result = '"fas fa-star gold"' %>
+        <% tag = "<i class=#{result}></i>" %>
+        <%= rv = review.rating.to_i %> <%=raw tag.to_s * rv %>
+        <% end %>
+
+      </strong>
       <br>
       <em><%= review.content %></em>
+      <hr>
       <% end %>
     </div>
 
