@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-6 margin-sign", id="search-new">
-        <h1>Please log in to taste the <em>KitChef </em>experience</h1>
-
+        <h1 class="text-center">Please log in to taste the <em>KitChef </em>experience</h1>
+        <br>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
