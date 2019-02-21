@@ -1,28 +1,20 @@
+
+<div class="back-show">
 <div class="head-show"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-  url('<%= cl_image_path @product.photo, crop: :fill %>')">
-  <div class="card-category"></div>
-    <div class="card-description">
-      <h2><%= @product.name.upcase %></h2>
-      <div class="square-font">
-      <p><%= @product.category.upcase %></p>
-      </div>
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('<%= cl_image_path @product.photo, crop: :fill %>')">
+<div class="card-category"></div>
+<div class="card-description">
+  <h2><%= @product.name.upcase %></h2>
+  <div class="square-font">
+    <p><%= @product.category.upcase %></p>
+  </div>
   <div class="price-show">
     <h2><%= @product.price %>€</h2>
     <p>/ person</p>
   </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
 
 <div class="container-show">
 
@@ -31,44 +23,44 @@
     <%= cl_image_tag user.photo, :crop=>"thumb", :width=>200, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
     <div class="name-chef-show">
       <h4> BY <%= user.first_name.upcase %></h4>
-        <div class="rate-show">
-          <p>Rating :</p>
-          <i class="fas fa-star gold"></i>
-          <i class="fas fa-star gold"></i>
-          <i class="fas fa-star gold"></i>
-          <i class="fas fa-star gold"></i>
-        </div>
-    </div>
-      <div class="contact-show">
-        <a href="#">Other meals</a><span> |</span>
-        <a href="#">Contact</a>
+      <div class="rate-show">
+        <p>Rating :</p>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
+        <i class="fas fa-star gold"></i>
       </div>
+    </div>
+    <div class="contact-show">
+      <a href="#">Other meals</a><span> |</span>
+      <a href="#">Contact</a>
+    </div>
+  <div class="boncommande">
+    <%= render 'shared/booking-form', booking: @booking, product: @product %>
+    <%= link_to "Back to all meal", products_path %>
+  </div>
   </div>
 
-      <div class="boncommande">
-          <%= render 'shared/booking-form', booking: @booking, product: @product %>
-          <%= link_to "Back to all meal", products_path %>
-     </div>
-<br>
-<br>
-<br>
-      <div class="description-show">
-        <p class="text-justify">Description: <hr>
-          <%= @product.description %></p>
-          <hr>
-      </div>
+  <br>
+  <br>
+  <br>
+  <div class="description-show">
+    <p class="text-justify">Description: <hr>
+      <%= @product.description %></p>
+      <hr>
 
-  <p>Rating:</p> <hr>
-  <%= link_to "Submit a review", new_product_review_path(@product) %>
-  <i class="fas fa-star gold"></i>
-  <i class="fas fa-star gold"></i>
-  <i class="fas fa-star gold"></i>
-  <i class="fas fa-star gold"></i>
-  <% @product.reviews.each do |review| %>
-    <%= review.content %>
-  <% end %>
+      <p>Rating:</p> <hr>
+      <%= link_to "Submit a review", new_product_review_path(@product) %>
+      <i class="fas fa-star gold"></i>
+      <i class="fas fa-star gold"></i>
+      <i class="fas fa-star gold"></i>
+      <i class="fas fa-star gold"></i>
+      <% @product.reviews.each do |review| %>
+      <%= review.content %>
+      <% end %>
+    </div>
 
+    <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
+  </div>
 </div>
-
-        <%= render 'shared/review-form', review: @review, product: @product %>
 

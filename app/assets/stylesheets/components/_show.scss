@@ -1,8 +1,10 @@
+.back-show {
+background-color: rgb(240,240,240);
+}
+
+
 .head-show {
    display: flex;
-  background-image:
-    linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
-    url('../../images/background.jpg');
     color: white;
     background-size: cover;
     height: 60vh;
@@ -10,6 +12,13 @@
     justify-content: center;
     border-bottom: 1px solid black;
 }
+
+.review-form-show{
+  width: 100%;
+  margin: 8px auto;
+
+}
+
 
 .rate-show {
   display: flex;
@@ -38,8 +47,9 @@
 }
 
 .container-show {
-  width: 800px;
+  width: 900px;
   margin: 20px auto;
+  background-color: white;
 }
 
 .price-show {
@@ -52,14 +62,16 @@
 }
 
 .boncommande {
-  width: 400px;
+  width: 360px;
   background-color: rgba(230,230,230,0.6);
   position: absolute;
-  right: 10%;
+  right: 1%;
+  top: -40px;
 }
 
 .description-show {
-  width: 400px;
+  width: 360px;
+  margin-left: 8px;
 }
 
 @media (max-width: 850px) {
@@ -75,6 +87,7 @@
     top: 80px;
     margin: 0px auto;
     position: relative;
+    width: 80%;
   }
 
 .name-chef-show {
@@ -91,9 +104,7 @@
 
   bottom: 100px;
 }
-.description-show {
-  margin: 0px auto;
-}
+
 .contact-show {
   position: absolute;
   top: -90px
