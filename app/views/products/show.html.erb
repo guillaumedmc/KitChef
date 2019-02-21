@@ -18,6 +18,7 @@
         <%= cl_image_tag user.photo, :crop=>"thumb", :width=>250, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
 
         <p>Rating</p>
+        <%= link_to "Submit a review", new_product_review_path(@product) %>
         <i class="fas fa-star gold"></i>
         <i class="fas fa-star gold"></i>
         <i class="fas fa-star gold"></i>
@@ -28,6 +29,7 @@
         <a href="#">Contact</a>
       </div>
     </div>
+
 
 <!--     <div class="card-show follower">
       <div class="card-content">
