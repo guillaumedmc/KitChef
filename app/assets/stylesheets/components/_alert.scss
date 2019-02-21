@@ -3,12 +3,13 @@
 * ------------------------------------- */
 
 .alert {
-  text-align: center;
+  text-align: left;
   color: white;
   position: absolute;
+  width: 100vh;
 }
 .alert-info {
-  background: $green;
+  background: #00B434;
 }
 .alert-warning {
   background: $red;
