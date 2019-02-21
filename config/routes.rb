@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
    resources :products do
     resources :bookings, only: [:create]
+    resources :reviews, only: [ :show, :index, :new, :create ]
     collection do
       get 'my_meals'
     end
