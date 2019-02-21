@@ -9,7 +9,7 @@ style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
 url('<%= cl_image_path @product.photo, crop: :fill %>')">
 <div class="card-category"></div>
 <div class="card-description">
-  <h2><%= @product.name.upcase %></h2>
+  <h1><%= @product.name.upcase %></h1>
   <div class="square-font">
     <p><%= @product.category.upcase %></p>
   </div>
@@ -24,7 +24,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
 
   <div class="prof-show">
     <% user = User.find(@product.user_id) %>
-    <%= cl_image_tag user.photo, :crop=>"thumb", :width=>200, :height=>200 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
+    <%= cl_image_tag user.photo, :crop=>"thumb", :width=>150, :height=>150 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
     <div class="name-chef-show">
       <h4> BY <%= user.first_name.upcase %></h4>
       <div class="rate-show">
@@ -58,12 +58,6 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
           <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
         <%= review.created_at.to_s.first(10)%><br>
         <%= user.first_name%>
-
-
-
-
-
-
 
         <% if review.rating > 0 %>
         <% result = '"fas fa-star gold"' %>
