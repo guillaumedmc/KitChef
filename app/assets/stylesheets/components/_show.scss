@@ -20,17 +20,19 @@
 .prof-show {
   display: block;
   position: relative;
+  bottom: -60px;
 }
 
 .name-chef-show {
   position: absolute;
-  bottom: 17px;
+  bottom: 0px;
   left: 170px;
+  margin-left: 10px;
 }
 
 .avatar-show {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgba(20,20,20,0.9);
   position:absolute;
   bottom: 40px;
 }
@@ -38,6 +40,26 @@
 .container-show {
   width: 800px;
   margin: 20px auto;
+}
+
+.price-show {
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  right: 10%;
+  background-color: rgba(20,20,20,0.6);
+  border-radius: 20px;
+}
+
+.boncommande {
+  width: 400px;
+  background-color: rgba(230,230,230,0.6);
+  position: absolute;
+  right: 10%;
+}
+
+.description-show {
+  width: 400px;
 }
 
 @media (max-width: 650px) {
