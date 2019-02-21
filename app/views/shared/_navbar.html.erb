@@ -8,8 +8,10 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to"Post a Meal", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to"My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <%= link_to"My Meals", my_meals_products_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to"My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-my-bookings"%>
+
 
 
     <!-- Profile picture with dropdown list -->
@@ -28,7 +30,6 @@
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
               <li><%= link_to 'Edit my information', edit_user_registration_path %></li>
               <% if current_user.chef %>
-                <li><%= link_to"My Meals", my_meals_products_path %></li>
               <% end %>
           </ul>
         </div>
