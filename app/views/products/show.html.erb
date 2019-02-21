@@ -59,7 +59,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
         <%= review.created_at.to_s.first(10)%><br>
         <%= user.first_name%>
 
-        <% if review.rating > 0 %>
+        <% if review.rating.nil? == false %>
         <% result = '"fas fa-star gold"' %>
         <% tag = "<i class=#{result}></i>" %>
         <% rv = review.rating.to_i %> <%=raw tag.to_s * rv %>
