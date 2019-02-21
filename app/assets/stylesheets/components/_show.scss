@@ -10,13 +10,12 @@ background-color: rgb(240,240,240);
     height: 60vh;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(20,20,20,0.2);
 }
 
 .review-form-show{
-  width: 100%;
-  margin: 8px auto;
-
+  margin: 12% auto;
+  width:90%;
 }
 
 
@@ -30,6 +29,7 @@ background-color: rgb(240,240,240);
   display: block;
   position: relative;
   bottom: -60px;
+  margin-left: 5%;
 }
 
 .name-chef-show {
@@ -50,6 +50,8 @@ background-color: rgb(240,240,240);
   width: 900px;
   margin: 20px auto;
   background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(20,20,20,0.1);
 }
 
 .price-show {
@@ -65,13 +67,16 @@ background-color: rgb(240,240,240);
   width: 360px;
   background-color: rgba(230,230,230,0.6);
   position: absolute;
-  right: 1%;
+  right: 5%;
   top: -40px;
+  border-radius: 5px;
+  padding: 2%;
+  margin: 3px;
 }
 
 .description-show {
   width: 360px;
-  margin-left: 8px;
+  margin-left: 5%;
 }
 
 @media (max-width: 850px) {
