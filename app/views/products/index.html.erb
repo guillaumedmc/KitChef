@@ -48,12 +48,11 @@
               <p><%= product.category %></p>
             </div>
             <div class="card-avatar">
-            <% user = User.find(product.user_id) %>
-            <%= cl_image_tag user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+            <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
             </div>
             <div class="card-desc">
-              <h2><strong><%= product.name %> </strong> - €<%= product.price %>/pers.</>
-              <p><%= product.description %></p>
+              <h2><strong><%= product.name %> </strong>
+              <p>€<%= product.price %>/pers.</p>
             </div>
             <div class="card-header">
               <div class="card-rating">
