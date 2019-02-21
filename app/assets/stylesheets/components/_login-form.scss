@@ -1,0 +1,12 @@
+.background-login {
+  background-image:
+    linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%),
+    url('bg-login.jpg');
+    color: white;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    z-index: -1;
+}
