@@ -6,11 +6,13 @@
   text-align: center;
   color: white;
   position: absolute;
-  width: 100vh;
+  width: 100vw;
 }
 .alert-info {
   background: #00B434;
-  width: 100vw;
+  vertical-align: top;
+  opacity: 0.4;
+  border: none;
 }
 .alert-warning {
   background: $red;
