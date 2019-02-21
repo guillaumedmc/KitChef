@@ -11,14 +11,16 @@
   </div>
   <a class="card-link" href="#" ></a>
 </div>
-
-        <p>Rating</p>
-        <%= link_to "Submit a review", new_product_review_path(@product) %>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        </div>
+  <p>Rating</p>
+  <%= link_to "Submit a review", new_product_review_path(@product) %>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <% @product.reviews.each do |review| %>
+    <%= review.content %>
+  <% end %>
+</div>
 
 
 
