@@ -4,7 +4,6 @@
   padding: 2em 0;
   padding: 20px;
   text-align: center;
-  position: relative;
 }
 
 
@@ -14,8 +13,18 @@
 
 .container-index {
 justify-content: space-between;
+margin-top: 50px;
+
 }
 
 .search {
   margin-top: 29px;
+}
+
+.wrapper-index-index{
+  background-color: red;
+  color: white;
+  padding: 2em 0;
+  padding: 20px;
+  text-align: center;
 }

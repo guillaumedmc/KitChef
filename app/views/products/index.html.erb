@@ -11,8 +11,8 @@
         <div class="col-xs-3">
           <label for="date">Which food or Chef?</label>
           <%= form_tag products_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
+          <%= text_field_tag :query_1,
+          params[:query_1],
           class: "form-control",
             placeholder: "Food type"
             %>
@@ -32,40 +32,57 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="wrapper-index-search">
+      <div class="col-xs-6">
+        <label for="sort-by">Sort by?</label>
+       <%= form_tag products_path, method: :get do %>
+         <%= text_field_tag :query_2,
+         params[:query_2],
+         class: "form-control food-type",
+          placeholder: "Sort by?"
+          %>
+        </div>
+        <br>
+        <div class="col-xs-6">
+        <%= submit_tag "Please, sort it !", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="container-index">
-    <div class="row">
-      <div class="cards-index">
-        <% @products.each do |product| %>
-        <%= link_to product_path(product.id) do %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-index">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
-              <div class="card-category">
-                <p><%= product.category %></p>
-              </div>
-              <div class="card-avatar">
-                <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
-              </div>
-              <div class="card-desc">
-                <h2><strong><%= product.name %> </strong>
-                  <p>€<%= product.price %>/pers.</p>
+    <div class="container-index">
+      <div class="row">
+        <div class="cards-index">
+          <% @products.each do |product| %>
+          <%= link_to product_path(product.id) do %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card-index">
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
+                <div class="card-category">
+                  <p><%= product.category %></p>
                 </div>
-                <div class="card-header">
-                  <div class="card-rating">
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star"></i>
+                <div class="card-avatar">
+                  <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+                </div>
+                <div class="card-desc">
+                  <h2><strong><%= product.name %> </strong>
+                    <p>€<%= product.price %>/pers.</p>
+                  </div>
+                  <div class="card-header">
+                    <div class="card-rating">
+                      <i class="fas fa-star gold"></i>
+                      <i class="fas fa-star gold"></i>
+                      <i class="fas fa-star gold"></i>
+                      <i class="fas fa-star gold"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <% end %>
+            <% end %>
           </div>
-          <% end %>
-          <% end %>
         </div>
       </div>
-    </div>
 
