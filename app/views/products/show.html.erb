@@ -39,6 +39,10 @@
           <i class="fas fa-star gold"></i>
         </div>
     </div>
+      <div class="contact-show">
+        <a href="#">Other meals</a><span> |</span>
+        <a href="#">Contact</a>
+      </div>
   </div>
 
       <div class="boncommande">
@@ -47,13 +51,21 @@
      </div>
 <br>
 <br>
-      <div class="contact-show">
-        <a href="#">Other meals</a><span> |</span>
-        <a href="#">Contact</a>
-      </div>
 <br>
       <div class="description-show">
-        <p class="text-justify">DESCRIPTION: <hr>
+        <p class="text-justify">Description: <hr>
           <%= @product.description %></p>
+          <hr>
       </div>
+
+  <p>Rating:</p> <hr>
+  <%= link_to "Submit a review", new_product_review_path(@product) %>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <i class="fas fa-star gold"></i>
+  <% @product.reviews.each do |review| %>
+    <%= review.content %>
+  <% end %>
+
 </div>

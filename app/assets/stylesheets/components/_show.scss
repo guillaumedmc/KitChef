@@ -62,8 +62,41 @@
   width: 400px;
 }
 
-@media (max-width: 650px) {
-  .conts {
-    display: block;
+@media (max-width: 850px) {
+
+  .prof-show {
+    margin: 0px auto;
+  display: block;
+  position: relative;
+  bottom: -120px;
+}
+
+ .boncommande {
+    top: 80px;
+    margin: 0px auto;
+    position: relative;
   }
+
+.name-chef-show {
+  position: absolute;
+  bottom: 60px;
+  left: 170px;
+  margin-left: 10px;
+}
+
+.avatar-show {
+  margin: 0px auto;
+  border-radius: 50%;
+  border: 1px solid rgba(20,20,20,0.9);
+
+  bottom: 100px;
+}
+.description-show {
+  margin: 0px auto;
+}
+.contact-show {
+  position: absolute;
+  top: -90px
+}
+
 }

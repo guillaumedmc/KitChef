@@ -21,10 +21,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index
-    @bookings = policy_scope(Booking.order(date: :desc))
-  end
-
   private
 
   def booking_params
