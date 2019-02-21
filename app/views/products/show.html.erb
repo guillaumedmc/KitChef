@@ -50,13 +50,12 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <hr>
 
       <p>Rating:</p> <hr>
-      <%= link_to "Submit a review", new_product_review_path(@product) %>
-      <i class="fas fa-star gold"></i>
-      <i class="fas fa-star gold"></i>
-      <i class="fas fa-star gold"></i>
-      <i class="fas fa-star gold"></i>
       <% @product.reviews.each do |review| %>
-      <%= review.content %>
+      <hr>
+       <strong><%= review.created_at.to_s.first(10) %></strong>
+      <br>
+      <em><%= review.content %></em>
+      <hr>
       <% end %>
     </div>
 
