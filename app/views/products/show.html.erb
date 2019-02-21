@@ -1,7 +1,11 @@
 
-<div class="back-show">
+<!--  <div class="back-show"
+style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.4)),
+url('<%= cl_image_path ("show-back.jpg"), height: 600, width: 400 %>')">
+ -->
+
 <div class="head-show"
-style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
 url('<%= cl_image_path @product.photo, crop: :fill %>')">
 <div class="card-category"></div>
 <div class="card-description">
@@ -60,5 +64,6 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
 
     <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
   </div>
-</div>
+<!-- </div> -->
+
 

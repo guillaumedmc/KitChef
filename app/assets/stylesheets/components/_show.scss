@@ -1,5 +1,7 @@
 .back-show {
-background-color: rgb(240,240,240);
+height: 100%;
+color:white;
+padding-bottom: 20px;
 }
 
 
@@ -22,6 +24,11 @@ background-color: rgb(240,240,240);
 .rate-show {
   display: flex;
   justify-content: center;
+}
+
+.rate-show,p {
+    margin: -7px 0 12.5px;
+
 }
 
 
