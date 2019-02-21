@@ -1,27 +1,25 @@
  <div class="col-xs-12 col-sm-5 col-sm-offset-1" id="search">
    <h1>Best Chefs around you</h1>
    <p>Discover the best Chefs around you to cook at your home</p>
-  <form action="">
-      <div class="row row-home">
-          <div class="form-group">
-            <label for="location">When?</label>
-            <input type="location" id="location" placeholder="Paris" class= form-control>
-        </div>
-          <label for="date">Which food or Chef?</label>
-          <%= form_tag products_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control food-type",
-            placeholder: "Food type"
-            %>
-            <% end %>
-            <div class="form-group">
-              <label for="date">How many people?</label>
-              <input type="number" id="number" placeholder="2" class= form-control>
-            </div>
 
-            <input type="submit" value="Search the best meal!" class="btn btn-primary search">
-            <%= link_to "Search I'm hungry", products_path, class:'btn btn-primary' %>
-          </form>
+   <div class="form-home">
+
+     <label for="location">Where?</label>
+     <input type="string" id="location" placeholder="Paris" class= form-control>
+<br>
+     <label for="location">How many people?</label>
+     <input type="string" id="location" placeholder="2" class= form-control>
+     <br>
+     <label for="date">Which food or Chef?</label>
+     <%= form_tag products_path, method: :get do %>
+     <%= text_field_tag :query,
+     params[:query],
+     class: "form-control food-type",
+      placeholder: "Food type"
+      %>
+      <br>
+      <%= submit_tag "Search, I'm hungry !", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
+</div>
