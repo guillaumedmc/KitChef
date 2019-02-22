@@ -77,8 +77,8 @@
       <hr>
       <% end %>
     <% book = Booking.where(product_id: params[:id]) %>
-    <% if book[0] != nil && @current_user.nil? == false%>
-    <% if book[0].user_id == @current_user.id %>
+      <%# if book[0] != nil && @current_user.nil? == false%>
+      <%# if book[0].user_id == @current_user.id %>
     <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
     <% end %>
     <% end %>
