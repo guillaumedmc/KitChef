@@ -23,10 +23,21 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <h4> BY <%= user.first_name.upcase %></h4>
       <div class="rate-show">
         <p>Rating :</p>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
+
+        <% average = Review.where(product_id: params[:id]) %>
+        <% sum = 0 %>
+        <% notes = 0 %>
+
+        <% average.each do |review| %>
+        <% sum += review.rating.to_i %>
+        <% notes += 1 %>
+        <% end %>
+
+        <% total = sum/notes %>
+        <% noteresult = '"fas fa-star gold"' %>
+        <% taghtml = "<i class=#{noteresult}></i>" %>
+        <% review_moyen_show = total %> <%=raw taghtml * review_moyen_show %>
+
       </div>
     </div>
     <div class="contact-show">
