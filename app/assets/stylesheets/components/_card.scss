@@ -3,13 +3,13 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   background-color: white;
   padding: 0px;
-  transition: opacity 0.2s ease-in;
+  transition: opacity 0.4s ease-in;
   opacity: 0.6;
 }
 
 
 .card-index:hover {
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.8);
   background-color: white;
   opacity: 1;
 }
@@ -72,7 +72,7 @@ right: 10px;
 .card-avatar {
 position: absolute;
 right: 10px;
-top: 35px;
+top: 15px;
 }
 
 .card-rating a {
@@ -103,4 +103,10 @@ opacity: 0.9;
 
 .card-desc h2{
   font-size: 30px;
+}
+
+.category {
+  font-size: 15px;
+  border-radius: 20px;
+  opacity: 0.8;
 }
