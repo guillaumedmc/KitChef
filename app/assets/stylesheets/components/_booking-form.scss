@@ -5,7 +5,9 @@
 
 .flex-booking {
   display: flex;
+  flex-direction: column;
 }
+
 
 #review_rating {
     width: 50px;
@@ -20,3 +22,53 @@
   margin: auto 15px;
   margin-top: 29px;
 }
+
+.flex-booking-info {
+  display: flex;
+}
+
+.no-padding {
+  margin-left: 0;
+  padding-left: 0;
+  width: 300px;
+}
+
+.book-button {
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.accept {
+  font-size: 18px;
+  color: $green;
+}
+
+.size-text {
+  width: 300px;
+}
+
+.margin-2px {
+  margin-bottom: 10px;
+}
+
+.pending h4 {
+  color: #000000;
+}
+
+.margin-15px {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.chef p {
+  font-size: 15px;
+}
+
+.pendant h4 {
+  color: #111111;
+}
+
+
