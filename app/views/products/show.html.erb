@@ -1,20 +1,19 @@
-
 <div class="back-show" id="show-page">
 
-<div class="head-show"
-style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-url('<%= cl_image_path @product.photo, crop: :fill %>')">
-<div class="card-category"></div>
-<div class="card-description">
-  <h1><%= @product.name.upcase %></h1>
-  <div class="square-font">
-    <p><%= @product.category.upcase %></p>
+  <div class="head-show"
+  style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+  url('<%= cl_image_path @product.photo, crop: :fill %>')">
+  <div class="card-category"></div>
+  <div class="card-description">
+    <h1><%= @product.name.upcase %></h1>
+    <div class="square-font">
+      <p><%= @product.category.upcase %></p>
+    </div>
+    <div class="price-show">
+      <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
+      <p>/ person</p>
+    </div>
   </div>
-  <div class="price-show">
-    <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
-    <p>/ person</p>
-  </div>
-</div>
 </div>
 
 <div class="container-show">
@@ -32,11 +31,11 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
         <% sum += review.rating.to_i %>
         <% end %>
         <% if sum > 0 %>
-          <% total = sum/average.size %>
-          <% noteresult = '"fas fa-star gold"' %>
-          <% taghtml = "<i class=#{noteresult}></i>" %>
-          <% review_moyen_show = total %>
-          <%=raw taghtml * review_moyen_show %>
+        <% total = sum/average.size %>
+        <% noteresult = '"fas fa-star gold"' %>
+        <% taghtml = "<i class=#{noteresult}></i>" %>
+        <% review_moyen_show = total %>
+        <%=raw taghtml * review_moyen_show %>
         <% end %>
       </div>
     </div>
@@ -44,12 +43,12 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <a href="#">Other meals</a><span> |</span>
       <a href="#">Contact</a>
     </div>
-  <div class="boncommande">
-    <%= render 'shared/booking-form', booking: @booking, product: @product %>
-    <div id="dynamic-price">
-      <p></p>
+    <div class="boncommande">
+      <%= render 'shared/booking-form', booking: @booking, product: @product %>
+      <div id="dynamic-price">
+        <p></p>
+      </div>
     </div>
-  </div>
 
 
   </div>
@@ -60,7 +59,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
   <div class="description-show">
     <p class="text-justify">Description: <hr>
       <%= @product.description %></p>
-    <%= link_to "Back to all meal", products_path, class: "btn btn-success" %>
+      <%= link_to "Back to all meal", products_path, class: "btn btn-success" %>
       <hr>
       <p>Rating:</p>
       <% @product.reviews.each do |review| %>
@@ -83,12 +82,12 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <% end %>
     </div>
 
-<% book = Booking.where(product_id: params[:id]) %>
-  <% if book[0] != nil %>
+    <% book = Booking.where(product_id: params[:id]) %>
+    <% if book[0] != nil %>
     <% if book[0].user_id == @current_user.id %>
-      <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
+    <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
     <% end %>
-  <% end %>
+    <% end %>
 
   </div>
   <!-- </div> -->
