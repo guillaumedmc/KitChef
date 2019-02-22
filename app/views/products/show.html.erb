@@ -13,9 +13,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
   </div>
 </div>
 </div>
-
 <div class="container-show">
-
   <div class="prof-show">
     <% user = User.find(@product.user_id) %>
     <%= cl_image_tag user.photo, :crop=>"thumb", :width=>150, :height=>150 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
@@ -23,21 +21,17 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <h4> BY <%= user.first_name.upcase %></h4>
       <div class="rate-show">
         <p>Rating :</p>
-
         <% average = Review.where(product_id: params[:id]) %>
         <% sum = 0 %>
         <% notes = 0 %>
-
         <% average.each do |review| %>
         <% sum += review.rating.to_i %>
         <% notes += 1 %>
         <% end %>
-
         <% total = sum/notes %>
         <% noteresult = '"fas fa-star gold"' %>
         <% taghtml = "<i class=#{noteresult}></i>" %>
         <% review_moyen_show = total %> <%=raw taghtml * review_moyen_show %>
-
       </div>
     </div>
     <div class="contact-show">
@@ -49,7 +43,6 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <%= link_to "Back to all meal", products_path %>
     </div>
   </div>
-
   <br>
   <br>
   <br>
@@ -63,23 +56,17 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
         <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
         <%= review.created_at.to_s.first(10)%><br>
         <%= user.first_name%>
-
         <% if review.rating.nil? == false %>
         <% result = '"fas fa-star gold"' %>
         <% tag = "<i class=#{result}></i>" %>
         <% rv = review.rating.to_i %> <%=raw tag.to_s * rv %>
         <% end %>
-
       </strong>
-
       <br>
       <em><%= review.content %></em>
       <hr>
       <% end %>
     </div>
-
     <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
   </div>
-  <!-- </div> -->
-
-
+<!-- </div> -->
