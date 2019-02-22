@@ -5,38 +5,85 @@
     <a href="#" class="tab-active">Current bookings</a>
     <a href="#" class="tab">Past bookings</a>
   </div>
-  <ul class="inbox">
-    <% if @bookings.nil? %>
-    <p>You don't have any booking yet, find your booking</p>
+    <% if current_user.chef %>
+      <% if @bookings.nil? %>
+        <h4>You don't have any booking yet, add new meals or wait for clients</h4>
+      <% else %>
+        <ul class="inbox">
+          <% @chef_bookings.each do |booking| %>
+            <li class="message">
+              <div class="picture">
+                <%= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+              </div>
+
+              <div class="text">
+                <h4><%= booking.product.name %></h4>
+                <p><%= booking.product.description %></p>
+                <%= link_to 'See detail', product_path(booking.product), class:"no-decoration" %>
+              </div>
+
+              <div class="text flex-booking">
+              <h4>Information about this booking</h4>
+                <div class="text">
+                  <p>Dinner for <%= booking.number_of_covers %> people </p>
+                  <p>Scheduled on the <%= booking.date %> </p>
+                  <p>Price: €<%= booking.product.price %>/pers</p>
+                </div>
+                <div class="text">
+                  <p>Book by <%= booking.user.first_name %></p>
+                  <%= cl_image_tag booking.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+                </div>
+              </div>
+
+              <div>
+                <% if booking.status %>
+                    <h4>You accepted this booking</h4>
+                <% else %>
+                    <%= link_to "#{ booking.status ? 'Accepted' : 'Accept' }", toggle_enable_status_booking_path(booking), method: :patch, class: "btn btn-accpt"  %>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+
+      <% end %>
+
+
     <% else %>
-      <% @bookings.each do |booking| %>
-        <li class="message">
-          <div class="picture">
-            <%= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
-          </div>
+      <% if @bookings.nil? %>
+        <p>You don't have any booking yet, find your booking</p>
+      <% else %>
+        <ul class="inbox">
+          <% @bookings.each do |booking| %>
+            <li class="message">
+              <div class="picture">
+                <%= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+              </div>
 
-          <div class="text">
-            <h4><%= booking.product.name %></h4>
-            <p><%= booking.product.description %></p>
-            <%= link_to 'See detail', product_path(booking.product), class:"no-decoration" %>
-          </div>
+              <div class="text">
+                <h4><%= booking.product.name %></h4>
+                <p><%= booking.product.description %></p>
+                <%= link_to 'See detail', product_path(booking.product), class:"no-decoration" %>
+              </div>
 
-          <div class="chef">
-            <% product = Product.find(booking.product_id) %>
-            <% user = User.find(product.user_id) %>
-            <h4><%= booking.product.user.first_name %></h4>
-            <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
-          </div>
+              <div class="chef">
+                  <h4>Your chef is <%= booking.product.user.first_name %></h4>
+                  <%= cl_image_tag booking.product.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+              </div>
 
-          <div class="price" id="accepted">
-            <h4>Accepted</h4>
-            <p>Dinner for <%= booking.number_of_covers %> people </p>
-            <p>Price: €<%= booking.product.price %>/pers</p>
-          </div>
-        </li>
+              <div class="price" id="accepted">
+                  <% if booking.status %>
+                    <h4>Booking accepted</h4>
+                  <% else %>
+                    <h4>Acceptation pending</h4>
+                  <% end %>
+                <p>Dinner for <%= booking.number_of_covers %> people </p>
+                <p>Price: €<%= booking.product.price %>/pers</p>
+              </div>
+            </li>
+        <% end %>
       <% end %>
     <% end %>
   </ul>
 </div>
-
 

@@ -12,6 +12,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def toggle_enable_status?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all.select { |record| record.user == user }
