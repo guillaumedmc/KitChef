@@ -8,10 +8,12 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to"Post a Meal", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to"My Meals", my_meals_products_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <%= link_to"My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-my-bookings"%>
-
+    <% if user_signed_in? %>
+      <% if current_user.chef %>
+        <%= link_to"My Meals", my_meals_products_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+      <%= link_to"My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-my-bookings"%>
+    <% end %>
 
 
     <!-- Profile picture with dropdown list -->

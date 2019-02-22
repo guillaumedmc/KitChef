@@ -4,11 +4,11 @@ class ProductsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = " \
-        products.name @@ :query \
-        OR products.category @@ :query \
-        OR users.first_name @@ :query \
+      products.name @@ :query \
+      OR products.category @@ :query \
+      OR users.first_name @@ :query \
       "
-      @products = policy_scope(Product).joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      @products = policy_scope(Product).joins(:user).where(sql_query, query: "%#{params[:query]}%").order(price: :desc)
     else
       @products = policy_scope(Product).order(price: :desc)
     end
@@ -37,6 +37,12 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  # def edit
+  #   @product = Product.find(params[:id])
+  #   authorize @product
+  # end
+
 
   def my_meals
     @products = Product.select { |product| product.user == current_user }

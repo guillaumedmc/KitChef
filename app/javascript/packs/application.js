@@ -13,3 +13,12 @@ if (document.getElementById("show-page")) {
 }
 
 
+
+const removeBorderBottom = () => {
+  const meals = document.querySelectorAll('.message');
+  if (meals) {
+    meals[meals.length - 1].style.border = "none"
+  }
+}
+
+removeBorderBottom()

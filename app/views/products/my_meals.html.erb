@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1>Your meals</h1>
+  <h1>The amazing meals you are offering</h1>
 
   <div class="tabs">
     <a href="#" class="tab-active">Your live meals</a>
@@ -18,11 +18,10 @@
         <p><%= product.description %></p>
       </div>
 
-
       <div class="price" id="accepted">
         <p>Dinner for max <%= product.max_cover %> people </p>
         <p>Price: €<%= product.price %>/pers</p>
-        <%= link_to 'See detail', product_path(product), class:"no-decoration" %>
+        <%= link_to 'See detail', product_path(product), class:"no-decoration" %> / <%= link_to 'Modify your meal', edit_product_path(product), class:"no-decoration" %>
       </div>
     </li>
   <% end %>

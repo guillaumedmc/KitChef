@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [ :create]
+
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
   def new
     @booking = Booking.new
     authorize @booking
