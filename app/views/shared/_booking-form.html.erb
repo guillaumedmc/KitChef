@@ -1,4 +1,4 @@
-<h3>Do you want to taste a <em> <%= @product.name %></em> made with <i class="fas fa-heart" id="coeur"></i> by <%= @product.user.first_name %> ?</h3>
+<h3>Keen for <em> <%= @product.name %></em> made with <i class="fas fa-heart" id="coeur"></i> by <%= @product.user.first_name %> ?</h3>
 
 <%= simple_form_for [@product, @booking] do |f| %>
   <%= f.input :date, as: :date %>

@@ -1,5 +1,5 @@
 
-<div class="back-show">
+<div class="back-show" id="show-page">
 <div class="head-show"
 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 url('<%= cl_image_path @product.photo, crop: :fill %>')">
@@ -10,7 +10,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
     <p><%= @product.category.upcase %></p>
   </div>
   <div class="price-show">
-    <h2><%= @product.price %>€</h2>
+    <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
     <p>/ person</p>
   </div>
 </div>
@@ -38,7 +38,11 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
   <div class="boncommande">
     <%= render 'shared/booking-form', booking: @booking, product: @product %>
     <%= link_to "Back to all meal", products_path %>
+    <div id="dynamic-price">
+      <p></p>
+    </div>
   </div>
+
   </div>
 
   <br>
