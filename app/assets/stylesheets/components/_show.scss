@@ -62,29 +62,29 @@
 }
 
 .price-show {
-  text-align: center;
-  padding: 5px;
-  position: absolute;
-  right: 10%;
-  background-color: rgba(20,20,20,0.6);
-  border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    right: 89%;
+    background-color: rgba(20, 20, 20, 0.6);
+    border-radius: 10px;
 }
 
 .boncommande {
-  width: 360px;
-  background-color: rgba(230,230,230,0.6);
-  position: absolute;
-  right: 5%;
-  top: -40px;
-  border-radius: 5px;
-  padding: 2%;
-  margin: 3px;
+    width: 347px;
+    background-color: rgba(230, 230, 230, 0.65);
+    position: fixed;
+    right: 9%;
+    top: 244px;
+    border-radius: 5px;
+    padding: 2%;
+    margin: 3px;
 }
 
 .description-show {
-  width: 360px;
-  margin-left: 5%;
-  margin-bottom: 30px
+    width: 590px;
+    margin-left: 5%;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 850px) {
