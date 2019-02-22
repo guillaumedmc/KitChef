@@ -81,28 +81,34 @@
                 <%= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
               </div>
 
-              <div class="text">
+              <div class="text size-text">
                 <h4><%= booking.product.name %></h4>
-                <p><%= booking.product.description %></p>
+                <p><%= booking.product.description[0...50] %>...</p>
                 <%= link_to 'See detail', product_path(booking.product), class:"no-decoration" %>
               </div>
 
               <div class="text flex-booking">
-              <h4>Information about this booking</h4>
-                <div class="text">
-                  <p>Dinner for <%= booking.number_of_covers %> people </p>
-                  <p>Scheduled on the <%= booking.date %> </p>
-                  <p>Total price: €<%= booking.total_price %></p>
+                <div class="flex-booking-title">
+                  <h4>Information about this booking</h4>
                 </div>
-                <div class="text">
-                  <p>Book by <%= booking.user.first_name %></p>
-                  <%= cl_image_tag booking.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+                <div class="flex-booking-info">
+                  <div class="text no-padding">
+                    <p>Dinner for <%= booking.number_of_covers %> people </p>
+                    <p>Scheduled on the <%= booking.date %> </p>
+                    <p>Total price: €<%= booking.total_price %></p>
+                  </div>
+                  <div class="text text-center">
+                    <div class="margin-2px">
+                      <%= cl_image_tag booking.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+                    </div>
+                    <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                  </div>
                 </div>
               </div>
 
-              <div>
+              <div class="book-button">
                 <% if booking.status %>
-                    <h4>You accepted this booking</h4>
+                    <span class="accept">You accepted this booking</span>
                 <% else %>
                     <%= link_to "#{ booking.status ? 'Accepted' : 'Accept' }", toggle_enable_status_booking_path(booking), method: :patch, class: "btn btn-accpt"  %>
                 <% end %>
@@ -127,23 +133,28 @@
 
               <div class="text">
                 <h4><%= booking.product.name %></h4>
-                <p><%= booking.product.description %></p>
+                <p><%= booking.product.description[0...50] %>...</p>
                 <%= link_to 'See detail', product_path(booking.product), class:"no-decoration" %>
               </div>
 
-              <div class="chef">
-                  <h4>Your chef is <%= booking.product.user.first_name %></h4>
-                  <%= cl_image_tag booking.product.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+              <div class="chef margin-15px">
+                  <h4>Your chef</h4>
+                  <div class="margin-2px">
+                    <%= cl_image_tag booking.product.user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.1, class:"avatar-large" %>
+                  </div>
+                  <p><em><%= booking.product.user.first_name %> <%= booking.product.user.last_name %></em></p>
               </div>
 
               <div class="price" id="accepted">
                   <% if booking.status %>
                     <h4>Booking accepted</h4>
                   <% else %>
-                    <h4>Acceptation pending</h4>
+                    <div class="pending">
+                      <h4 style="color: grey">Acceptation pending</h4>
+                    </div>
                   <% end %>
                 <p>Dinner for <%= booking.number_of_covers %> people </p>
-                <p>Price: €<%= booking.product.price %>/pers</p>
+                <p>Price: €<%= booking.total_price %>/pers</p>
               </div>
             </li>
         <% end %>
