@@ -1,5 +1,5 @@
 <div class="review-form-show">
-  <h3>What do you thing of <br> <%= @product.name %> ?</h3>
+  <h3>What do you think of <br> <%= @product.name %> ?</h3>
 
   <%= simple_form_for([@product, @review]) do |f| %>
     <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5]  %>

@@ -10,12 +10,14 @@
      <label for="location">How many people?</label>
      <input type="string" id="location" placeholder="2" class= form-control>
      <br>
+
      <label for="date">Which food or Chef?</label>
      <%= form_tag products_path, method: :get do %>
      <%= text_field_tag :query,
      params[:query],
      class: "form-control food-type",
-      placeholder: "Food type"
+      placeholder: "Food type or Chef"
+
       %>
       <br>
       <%= submit_tag "Search, I'm hungry !", class: "btn btn-primary" %>

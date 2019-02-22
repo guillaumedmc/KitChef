@@ -1,8 +1,5 @@
 
-<!--  <div class="back-show"
-style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.4)),
-url('<%= cl_image_path ("show-back.jpg"), height: 600, width: 400 %>')">
- -->
+<div class="back-show" id="show-page">
 
 <div class="head-show"
 style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
@@ -14,7 +11,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
     <p><%= @product.category.upcase %></p>
   </div>
   <div class="price-show">
-    <h2><%= @product.price %>€</h2>
+    <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
     <p>/ person</p>
   </div>
 </div>
@@ -29,10 +26,18 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <h4> BY <%= user.first_name.upcase %></h4>
       <div class="rate-show">
         <p>Rating :</p>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
-        <i class="fas fa-star gold"></i>
+        <% average = Review.where(product_id: params[:id]) %>
+        <% sum = 0 %>
+        <% average.each do |review| %>
+        <% sum += review.rating.to_i %>
+        <% end %>
+        <% if sum > 0 %>
+          <% total = sum/average.size %>
+          <% noteresult = '"fas fa-star gold"' %>
+          <% taghtml = "<i class=#{noteresult}></i>" %>
+          <% review_moyen_show = total %>
+          <%=raw taghtml * review_moyen_show %>
+        <% end %>
       </div>
     </div>
     <div class="contact-show">
@@ -42,7 +47,12 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
   <div class="boncommande">
     <%= render 'shared/booking-form', booking: @booking, product: @product %>
     <%= link_to "Back to all meal", products_path %>
+    <div id="dynamic-price">
+      <p></p>
+    </div>
   </div>
+
+
   </div>
 
   <br>
@@ -54,8 +64,8 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <hr>
       <p>Rating:</p>
       <% @product.reviews.each do |review| %>
-       <strong>
-          <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
+      <strong>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
         <%= review.created_at.to_s.first(10)%><br>
         <%= user.first_name%>
 
@@ -73,8 +83,14 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <% end %>
     </div>
 
-    <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
+<% book = Booking.where(product_id: params[:id]) %>
+  <% if book.[0] != nil %>
+    <% if book[0].user_id == @current_user.id %>
+      <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
+    <% end %>
+  <% end %>
+
   </div>
-<!-- </div> -->
+  <!-- </div> -->
 
 
