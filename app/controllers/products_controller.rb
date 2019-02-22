@@ -2,14 +2,13 @@ class ProductsController < ApplicationController
   skip_after_action :verify_authorized, only: :my_meals
 
   def index
-
-    if params[:query_1].present?
+    if params[:query].present?
       sql_query = " \
-        products.name @@ :query \
-        OR products.category @@ :query \
-        OR users.first_name @@ :query \
+      products.name @@ :query \
+      OR products.category @@ :query \
+      OR users.first_name @@ :query \
       "
-      @products = policy_scope(Product).joins(:user).where(sql_query, query: "%#{params[:query_1]}%").order(price: :desc)
+      @products = policy_scope(Product).joins(:user).where(sql_query, query: "%#{params[:query]}%").order(price: :desc)
     else
       @products = policy_scope(Product).order(price: :desc)
     end
