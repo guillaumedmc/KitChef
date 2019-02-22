@@ -26,6 +26,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
   private
 
   def booking_params
