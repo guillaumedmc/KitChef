@@ -1,9 +1,3 @@
-
-<!--  <div class="back-show"
-style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.4)),
-url('<%= cl_image_path ("show-back.jpg"), height: 600, width: 400 %>')">
- -->
-
 <div class="head-show"
 style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
 url('<%= cl_image_path @product.photo, crop: :fill %>')">
@@ -39,10 +33,10 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <a href="#">Other meals</a><span> |</span>
       <a href="#">Contact</a>
     </div>
-  <div class="boncommande">
-    <%= render 'shared/booking-form', booking: @booking, product: @product %>
-    <%= link_to "Back to all meal", products_path %>
-  </div>
+    <div class="boncommande">
+      <%= render 'shared/booking-form', booking: @booking, product: @product %>
+      <%= link_to "Back to all meal", products_path %>
+    </div>
   </div>
 
   <br>
@@ -54,8 +48,8 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
       <hr>
       <p>Rating:</p>
       <% @product.reviews.each do |review| %>
-       <strong>
-          <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
+      <strong>
+        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
         <%= review.created_at.to_s.first(10)%><br>
         <%= user.first_name%>
 
@@ -75,6 +69,6 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
 
     <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
   </div>
-<!-- </div> -->
+  <!-- </div> -->
 
 
