@@ -1,6 +1,7 @@
 import "bootstrap";
 import { calendar } from '../components/calendar';
 import { price } from '../components/price';
+import { removeBorderBottom } from '../components/removeBorderBottom';
 import '../plugins/flatpickr';
 
 
@@ -12,13 +13,6 @@ if (document.getElementById("show-page")) {
   price();
 }
 
-
-
-const removeBorderBottom = () => {
-  const meals = document.querySelectorAll('.message');
-  if (meals) {
-    meals[meals.length - 1].style.border = "none"
-  }
+if (document.querySelector('message')) {
+  removeBorderBottom();
 }
-
-removeBorderBottom()
