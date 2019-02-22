@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @chef_bookings = Booking.joins(:product).where(:products => {:user => current_user})
   end
 
   def new
@@ -26,8 +27,11 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index
-    @bookings = policy_scope(Booking)
+  def toggle_enable_status
+    @booking = Booking.find(params[:id])
+    @booking.toggle!(:status)
+    authorize @booking
+    redirect_to bookings_path
   end
 
   private

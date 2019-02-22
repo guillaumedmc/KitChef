@@ -11,6 +11,13 @@ Rails.application.routes.draw do
       get 'my_meals'
     end
 
+  end
+
+  resources :bookings do
+    member do
+        patch :toggle_enable_status
+    end
+
    end
    resources :bookings, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
