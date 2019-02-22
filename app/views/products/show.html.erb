@@ -32,11 +32,12 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
         <% sum += review.rating.to_i %>
         <% notes += 1 %>
         <% end %>
-
+        <% if sum & notes > 0 %>
         <% total = sum/notes %>
         <% noteresult = '"fas fa-star gold"' %>
         <% taghtml = "<i class=#{noteresult}></i>" %>
         <% review_moyen_show = total %> <%=raw taghtml * review_moyen_show %>
+        <% end %>
 
       </div>
     </div>
