@@ -38,62 +38,66 @@
     <div class="wrapper-index-search">
       <div class="col-xs-6">
         <label for="sort-by">Sort by?</label>
-       <%= form_tag products_path, method: :get do %>
-         <%= text_field_tag :query_2,
-         params[:query_2],
-         class: "form-control food-type",
+        <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query_2,
+        params[:query_2],
+        class: "form-control food-type",
           placeholder: "Sort by?"
           %>
         </div>
         <br>
         <div class="col-xs-6">
-        <%= submit_tag "Please, sort it !", class: "btn btn-success" %>
-        <% end %>
+          <%= submit_tag "Please, sort it !", class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <div class="container-index">
-      <div class="row">
-        <br>
-        <div class="cards-index">
-          <% @products.each do |product| %>
-          <%= link_to product_path(product.id) do %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card-index">
-              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
-                <div class="card-category">
-                  <p class= "btn btn-primary category"><%= product.category %></p>
-                </div>
-                <div class="card-avatar">
-                  <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
-                </div>
-                <div class="card-desc">
-                  <h2><strong><%= product.name %> </strong>
-                    <br>
-                  <p class="btn btn-success">€<%= product.price %>/pers.</p>
+      <div class="container-index">
+        <div class="row">
+          <br>
+          <div class="cards-index">
+            <% @products.each do |product| %>
+            <%= link_to product_path(product.id) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card-index">
+                <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
+                  <div class="card-category">
+                    <p class= "btn btn-primary category"><%= product.category %></p>
                   </div>
-                  <div class="card-header">
-                    <div class="card-rating">
+                  <div class="card-avatar">
+                    <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
+                  </div>
+                  <div class="card-desc">
+                    <h2><strong><%= product.name %> </strong>
+                      <br>
+                      <p class="btn btn-success">€<%= product.price %>/pers.</p>
+                    </div>
+                    <div class="card-header">
+                      <div class="card-rating">
                         <% average = Review.where(product_id: product) %>
                         <% sum = 0 %>
                         <% average.each do |review| %>
                         <% sum += review.rating.to_i %>
-                      <% end %>
-                      <% if sum > 0 %>
+                        <% end %>
+                        <% if sum > 0 %>
                         <% total = sum/average.size %>
                         <% noteresult = '"fas fa-star gold"' %>
                         <% taghtml = "<i class=#{noteresult}></i>" %>
                         <% review_moyen_show = total %>
                         <%=raw taghtml * review_moyen_show %>
-                      <% end %>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <% end %>
+              <% end %>
             </div>
-            <% end %>
-            <% end %>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
 
