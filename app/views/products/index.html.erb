@@ -4,19 +4,21 @@
       <div class="row">
         <div class="col-xs-3">
           <div class="form-group">
-            <label for="location">When?</label>
+            <label for="location">Where?</label>
             <input type="location" id="location" placeholder="Paris" class= form-control>
           </div>
         </div>
         <div class="col-xs-3">
+
           <label for="date">Which food or Chef?</label>
           <%= form_tag products_path, method: :get do %>
-          <%= text_field_tag :query_1,
-          params[:query_1],
+          <%= text_field_tag :query,
+          params[:query],
           class: "form-control",
-            placeholder: "Food type"
+            placeholder: "Food type or Chef"
             %>
             <% end %>
+
           </div>
           <div class="col-xs-3">
             <div class="form-group">
@@ -57,7 +59,7 @@
           <%= link_to product_path(product.id) do %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="card-index">
-              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
                 <div class="card-category">
                   <p><%= product.category %></p>
                 </div>
@@ -66,7 +68,8 @@
                 </div>
                 <div class="card-desc">
                   <h2><strong><%= product.name %> </strong>
-                    <p>€<%= product.price %>/pers.</p>
+                    <br>
+                  <p class="btn btn-success">€<%= product.price %>/pers.</p>
                   </div>
                   <div class="card-header">
                     <div class="card-rating">
