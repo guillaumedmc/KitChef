@@ -3,89 +3,82 @@
   <div class="head-show"
   style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
   url('<%= cl_image_path @product.photo, crop: :fill %>')">
-  <div class="card-category"></div>
-  <div class="card-description">
-    <h1><%= @product.name.upcase %></h1>
-    <div class="square-font">
-      <p><%= @product.category.upcase %></p>
-    </div>
-    <div class="price-show">
-      <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
-      <p>/ person</p>
+    <div class="card-category"></div>
+    <div class="card-description">
+      <h1><%= @product.name.upcase %></h1>
+      <div class="square-font">
+        <p><%= @product.category.upcase %></p>
+      </div>
+      <div class="price-show">
+        <h2> <span id="prod-price"> <%= @product.price %> </span> €</h2>
+        <p>/ person</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container-show">
 
-  <div class="prof-show">
-    <% user = User.find(@product.user_id) %>
-    <%= cl_image_tag user.photo, :crop=>"thumb", :width=>150, :height=>150 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
-    <div class="name-chef-show">
-      <h4> BY <%= user.first_name.upcase %></h4>
-      <div class="rate-show">
-        <p>Rating :</p>
-        <% average = Review.where(product_id: params[:id]) %>
-        <% sum = 0 %>
-        <% average.each do |review| %>
-        <% sum += review.rating.to_i %>
-        <% end %>
-        <% if sum > 0 %>
-        <% total = sum/average.size %>
-        <% noteresult = '"fas fa-star gold"' %>
-        <% taghtml = "<i class=#{noteresult}></i>" %>
-        <% review_moyen_show = total %>
-        <%=raw taghtml * review_moyen_show %>
-        <% end %>
+  <div class="container-show">
+    <div class="prof-show">
+      <% user = User.find(@product.user_id) %>
+      <%= cl_image_tag user.photo, :crop=>"thumb", :width=>150, :height=>150 ,:gravity=>"face",:zoom=>0.2, class: 'avatar-show' %>
+      <div class="name-chef-show">
+        <h4> BY <%= user.first_name.upcase %></h4>
+        <div class="rate-show">
+          <p>Rating :</p>
+          <% average = Review.where(product_id: params[:id]) %>
+          <% sum = 0 %>
+          <% average.each do |review| %>
+            <% sum += review.rating.to_i %>
+          <% end %>
+          <% if sum > 0 %>
+            <% total = sum/average.size %>
+            <% noteresult = '"fas fa-star gold"' %>
+            <% taghtml = "<i class=#{noteresult}></i>" %>
+            <% review_moyen_show = total %>
+            <%=raw taghtml * review_moyen_show %>
+          <% end %>
+        </div>
+      </div>
+      <div class="contact-show">
+        <a href="#">Other meals</a><span> |</span>
+        <a href="#">Contact</a>
+      </div>
+      <div class="boncommande">
+        <%= render 'shared/booking-form', booking: @booking, product: @product %>
+        <div id="dynamic-price">
+          <p></p>
+        </div>
       </div>
     </div>
-    <div class="contact-show">
-      <a href="#">Other meals</a><span> |</span>
-      <a href="#">Contact</a>
-    </div>
-    <div class="boncommande">
-      <%= render 'shared/booking-form', booking: @booking, product: @product %>
-      <div id="dynamic-price">
-        <p></p>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="description-show">
-    <p class="text-justify">Description: <hr>
-      <%= @product.description %></p>
+    <br>
+    <br>
+    <br>
+    <div class="description-show">
+      <p class="text-justify">Description: <hr>
+        <%= @product.description %>
+      </p>
       <%= link_to "Back to all meal", products_path, class: "btn btn-success" %>
       <hr>
       <p>Rating - <em>(<%= average.size %> rates)</em></p>
       <% @product.reviews.each do |review| %>
-      <strong>
-        <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
-        <%= review.created_at.to_s.first(10)%><br>
-        <%= user.first_name%>
+        <strong>
+          <%= cl_image_tag user.photo, :crop=>"thumb", :width=>50, :height=>50 ,:gravity=>"face",:zoom=>0.2, class: "img-circle" %>
+          <%= review.created_at.to_s.first(10)%><br>
+          <%= user.first_name%>
 
-        <% if review.rating.nil? == false %>
-        <% result = '"fas fa-star gold"' %>
-        <% tag = "<i class=#{result}></i>" %>
-        <% rv = review.rating.to_i %> <%=raw tag.to_s * rv %>
-        <% end %>
-
-      </strong>
-
-      <br>
-      <em><%= review.content %></em>
-      <hr>
+          <% if review.rating.nil? == false %>
+            <% result = '"fas fa-star gold"' %>
+            <% tag = "<i class=#{result}></i>" %>
+            <% rv = review.rating.to_i %> <%=raw tag.to_s * rv %>
+          <% end %>
+        </strong>
+        <br>
+        <em><%= review.content %></em>
+        <hr>
       <% end %>
-    <% book = Booking.where(product_id: params[:id]) %>
-      <%# if book[0] != nil && @current_user.nil? == false%>
-      <%# if book[0].user_id == @current_user.id %>
-    <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
-    <% end %>
-    <% end %>
+      <% book = Booking.where(product_id: params[:id]) %>
+      <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
     </div>
-
-
   </div>
-  <!-- </div> -->
+</div>
 
 
