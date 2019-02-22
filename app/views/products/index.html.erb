@@ -61,7 +61,7 @@
             <div class="card-index">
               <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= product.photo %>')">
                 <div class="card-category">
-                  <p><%= product.category %></p>
+                  <p class= "btn btn-primary category"><%= product.category %></p>
                 </div>
                 <div class="card-avatar">
                   <%= cl_image_tag product.user.photo, :crop=>"thumb", :width=>30, :height=>30 ,:gravity=>"face",:zoom=>0.2, class:"avatar-large" %>
