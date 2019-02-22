@@ -46,7 +46,6 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
     </div>
   <div class="boncommande">
     <%= render 'shared/booking-form', booking: @booking, product: @product %>
-    <%= link_to "Back to all meal", products_path %>
     <div id="dynamic-price">
       <p></p>
     </div>
@@ -61,6 +60,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
   <div class="description-show">
     <p class="text-justify">Description: <hr>
       <%= @product.description %></p>
+    <%= link_to "Back to all meal", products_path, class: "btn btn-success" %>
       <hr>
       <p>Rating:</p>
       <% @product.reviews.each do |review| %>
@@ -84,7 +84,7 @@ url('<%= cl_image_path @product.photo, crop: :fill %>')">
     </div>
 
 <% book = Booking.where(product_id: params[:id]) %>
-  <% if book.[0] != nil %>
+  <% if book[0] != nil %>
     <% if book[0].user_id == @current_user.id %>
       <%= render 'shared/review-form', review: @review, product: @product, class: "review-form-show" %>
     <% end %>
