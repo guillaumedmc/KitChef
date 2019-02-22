@@ -3,5 +3,5 @@
 <%= simple_form_for [@product, @booking] do |f| %>
   <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :number_of_covers %>
-  <%= f.submit "Book this meal", class: "btn btn-danger" %>
+  <%= f.submit "Book this meal", class: "btn btn-danger submit-booking" %>
 <% end %>

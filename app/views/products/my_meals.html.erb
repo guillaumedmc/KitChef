@@ -19,9 +19,9 @@
       </div>
 
       <div class="price" id="accepted">
-        <p>Dinner for max <%= product.max_cover %> people </p>
         <p>Price: €<%= product.price %>/pers</p>
-        <%= link_to 'See detail', product_path(product), class:"no-decoration" %> / <%= link_to 'Modify your meal', edit_product_path(product), class:"no-decoration" %>
+        <%= link_to 'More details', product_path(product), class:"btn btn-success no-decoration see-detail" %>
+        <%= link_to 'Modify your meal', edit_product_path(product), class:"btn btn-primary no-decoration modify-mail" %>
       </div>
     </li>
   <% end %>
